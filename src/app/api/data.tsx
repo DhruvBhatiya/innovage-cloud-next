@@ -25,8 +25,38 @@ export const TruestedCompanies: { imgSrc: string }[] = [
   }
 ]
 
+
+// submenu: [
+//   {
+//     label: "Off-shore technical support",
+//     href: "/services/#off-shore-technical-support",
+//   },
+//   {
+//     label: "Incident management",
+//     href: "/services/#incident-management",
+//   },
+//   {
+//     label: "Manual Regression Testing",
+//     href: "/services/#manual-regression-testing",
+//   },
+//   {
+//     label: "Assessment as a Service",
+//     href: "/services/#assessment-as-a-service",
+//   },
+//   {
+//     label: "Configure and Code Integrations",
+//     href: "/services/#configure-and-code-integrations",
+//   },
+//   {
+//     label: "Bespoke Application Development",
+//     href: "/services/#bespoke-application-development",
+//   },
+// ],
+
+
 export const servicesData: {
   heading: string;
+  href: string;
   imgSrc: string;
   name: string;
   students: number;
@@ -36,6 +66,7 @@ export const servicesData: {
 }[] = [
     {
       heading: 'Off-shore technical support',
+      href: "/services/#off-shore-technical-support",
       name: "Colt stelle",
       imgSrc: '/images/services/Off-shore_technical_support.png',
       students: 150,
@@ -45,6 +76,7 @@ export const servicesData: {
     },
     {
       heading: 'Incident management',
+      href: "/services/#incident-management",
       name: "Colt stelle",
       imgSrc: '/images/services/Incident_management.png',
       students: 130,
@@ -54,6 +86,7 @@ export const servicesData: {
     },
     {
       heading: 'Manual Regression Testing',
+      href: "/services/#manual-regression-testing",
       name: "Colt stelle",
       imgSrc: '/images/services/Manual_Regression_Testing.png',
       students: 120,
@@ -63,6 +96,7 @@ export const servicesData: {
     },
     {
       heading: 'Assesment as a Service',
+      href: "/services/#assessment-as-a-service",
       name: "Colt stelle",
       imgSrc: '/images/services/Assesment_as_a_Service.png',
       students: 150,
@@ -72,6 +106,7 @@ export const servicesData: {
     },
     {
       heading: 'Configure and code integrations',
+      href: "/services/#configure-and-code-integrations",
       name: "Colt stelle",
       imgSrc: '/images/services/Configure_and_code_integrations.png',
       students: 150,
@@ -81,6 +116,7 @@ export const servicesData: {
     },
     {
       heading: 'Bespoke Application Development',
+      href: "/services/#bespoke-application-development",
       name: "Colt stelle",
       imgSrc: '/images/services/Bespoke_Application_Development.png',
       students: 150,

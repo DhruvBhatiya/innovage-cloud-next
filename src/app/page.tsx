@@ -17,9 +17,9 @@ export default function Home() {
       <Hero />
       <Services />
       <Expertise />
-      <Testimonial />
+      {/* <Testimonial /> */}
       {/* <Counter  /> */}
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Companies />
     </main>
   );

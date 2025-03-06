@@ -13,7 +13,7 @@ const Services = () => {
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 2,
         arrows: true,
         autoplay: true,
@@ -73,8 +73,8 @@ const Services = () => {
                                     </div> */}
                                 </div>
 
-                                <div className="px-3 pt-6 min-h-[90px]">
-                                    <Link href="#" className='text-2xl font-bold text-black max-w-75% inline-block '>{items.heading}</Link>
+                                <div className="11px-3 pt-6 min-h-[90px]">
+                                    <Link href={items.href} className='text-lg font-bold text-black max-w-75% inline-block '>{items.heading}</Link>
                                     {/* <h3 className='text-base font-normal pt-6 text-black/75'>{items.name}</h3> */}
 
                                     {/* <div className="flex justify-between items-center py-6 border-b">

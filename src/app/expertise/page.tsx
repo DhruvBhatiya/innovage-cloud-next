@@ -6,51 +6,51 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-// Define the service sections with titles and links
-const sections = [
+// Expertise sections with titles, descriptions, images, and IDs
+const expertiseSections = [
     {
-        title: "Off-shore technical support",
-        content: "We provide offshore technical support to ensure smooth business operations with minimal downtime.",
-        image: "/images/services/Off-shore_technical_support.png",
-        id: "off-shore-technical-support",
+        title: "OIC - Oracle Integration Cloud",
+        content: "Automate and streamline business processes with Oracle Integration Cloud, enabling seamless connectivity between applications.",
+        image: "/images/expertise/OIC.png",
+        id: "oic",
     },
     {
-        title: "Incident management",
-        content: "Efficiently handling incidents to minimize impact and restore services as quickly as possible.",
-        image: "/images/services/Incident_management.png",
-        id: "incident-management",
+        title: "VBCS - Visual Builder Cloud Service",
+        content: "Develop web and mobile applications rapidly with Oracle VBCS, a low-code development platform.",
+        image: "/images/expertise/VBCS.png",
+        id: "vbcs",
     },
     {
-        title: "Manual Regression Testing",
-        content: "Thorough manual regression testing to maintain application stability after updates.",
-        image: "/images/services/Manual_Regression_Testing.png",
-        id: "manual-regression-testing",
+        title: "PCS - Process Cloud Service",
+        content: "Orchestrate complex business workflows with Oracle PCS, enhancing process automation and efficiency.",
+        image: "/images/expertise/PCS.png",
+        id: "pcs",
     },
     {
-        title: "Assessment as a Service",
-        content: "Helping businesses evaluate their technical infrastructure and optimize performance.",
-        image: "/images/services/Assesment_as_a_Service.png",
-        id: "assessment-as-a-service",
+        title: "Apex Development",
+        content: "Build scalable, secure web applications using Oracle APEX with minimal coding effort.",
+        image: "/images/expertise/APEX.png",
+        id: "apex-development",
     },
     {
-        title: "Configure and Code Integrations",
-        content: "Seamless integration of applications to enhance workflow automation and efficiency.",
-        image: "/images/services/Configure_and_code_integrations.png",
-        id: "configure-and-code-integrations",
+        title: "Java Development",
+        content: "Develop robust enterprise applications with Java, leveraging its scalability and performance.",
+        image: "/images/expertise/Java.png",
+        id: "java-development",
     },
     {
-        title: "Bespoke Application Development",
-        content: "Custom application development tailored to your business needs for maximum efficiency.",
-        image: "/images/services/Bespoke_Application_Development.png",
-        id: "bespoke-application-development",
+        title: "Database",
+        content: "Optimize database management, performance tuning, and security with Oracle Database solutions.",
+        image: "/images/expertise/Database.png",
+        id: "database",
     },
 ];
 
-const Services = () => {
+const Expertise = () => {
     const path = usePathname();
 
     useEffect(() => {
-        // Smooth scroll to section on submenu click
+        // Smooth scroll to section when submenu link is clicked
         if (path.includes("#")) {
             const id = path.split("#")[1];
             const section = document.getElementById(id);
@@ -64,9 +64,9 @@ const Services = () => {
 
     return (
         <div>
-            <Breadcrumb pageName="Our Services" />
+            <Breadcrumb pageName="Our Expertise" />
 
-            {sections.map((section, index) => (
+            {expertiseSections.map((section, index) => (
                 <Box
                     key={section.id}
                     id={section.id}
@@ -84,7 +84,7 @@ const Services = () => {
                             width: "100%",
                             height: "100%",
                             backgroundColor: index % 2 === 0 ? "#f9f9f9" : "#fff",
-                            transform: "skewY(-4deg)", // Apply the angle
+                            transform: "skewY(-4deg)", // Angled background effect
                             transformOrigin: "top left",
                             zIndex: -1,
                         },
@@ -95,8 +95,6 @@ const Services = () => {
                             container
                             spacing={4}
                             direction={index % 2 === 0 ? "row" : "row-reverse"} // Alternating layout
-                            // alignItems="center"
-                            
                         >
                             {/* Text Content */}
                             <Grid item xs={12} md={6}>
@@ -130,4 +128,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Expertise;

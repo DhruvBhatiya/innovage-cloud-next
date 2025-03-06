@@ -44,3 +44,7 @@ section {
 .card-expe:hover .card-icon{
   background-color: rgb(200 71 54) !important;
 }
+
+.text-midnight_text{
+  color: rgb(200 71 54);
+}
