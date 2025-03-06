@@ -6,7 +6,7 @@ import React from "react";
 import Image from "next/image";
 import { MentorData } from "@/app/api/data";
 
-const Mentor = () => {
+const Expertise = () => {
 
     const settings = {
         dots: false,
@@ -14,7 +14,7 @@ const Mentor = () => {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         cssEase: "linear",
         responsive: [
             {
@@ -50,7 +50,7 @@ const Mentor = () => {
                             <div className='m-3 py-0 md:my-10 text-center'>
                                 <div className="relative">
                                     <Image src={items.imgSrc} alt="user-image" width={306} height={0} className="inline-block m-auto" />
-                                    <div className="absolute right-[84px] bottom-[102px] bg-white rounded-full p-4">
+                                    <div className="absolute right-[84px] bottom-[102px] bg-white 11rounded-full p-4">
                                         <Image src={'/images/mentor/linkedin.svg'} alt="linkedin-image" width={25} height={24} />
                                     </div>
                                 </div>
@@ -67,4 +67,4 @@ const Mentor = () => {
     );
 }
 
-export default Mentor
+export default Expertise

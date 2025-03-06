@@ -8,14 +8,14 @@ import Image from "next/image";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { servicesData } from "@/app/api/data";
 
-const Courses = () => {
+const Services = () => {
 
     const settings = {
         dots: false,
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 2,
-        arrows: false,
+        arrows: true,
         autoplay: true,
         speed: 500,
         cssEase: "linear",
@@ -67,7 +67,7 @@ const Courses = () => {
                         <div key={i} className="!h-full">
                             <div className='bg-white m-3 mb-12 px-3 pt-3 pb-3 shadow-course-shadow rounded-2xl !h-full' >
                                 <div className="relative rounded-3xl">
-                                    <Image src={items.imgSrc} alt="course-image" width={389} height={262} className="m-auto clipPath" />
+                                    <Image src={items.imgSrc} alt="course-image" width={389} height={262} className="m-auto clipPath " style={{ borderRadius: "20px 0px 100px" }} />
                                     {/* <div className="absolute right-5 -bottom-2 bg-secondary rounded-full p-6">
                                         <h3 className="text-white uppercase text-center text-sm font-medium">best <br /> seller</h3>
                                     </div> */}
@@ -112,4 +112,4 @@ const Courses = () => {
     );
 }
 
-export default Courses;
+export default Services;

@@ -37,7 +37,7 @@ export const servicesData: {
     {
       heading: 'Off-shore technical support',
       name: "Colt stelle",
-      imgSrc: '/images/courses/courseone.png',
+      imgSrc: '/images/services/Off-shore_technical_support.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -46,7 +46,7 @@ export const servicesData: {
     {
       heading: 'Incident management',
       name: "Colt stelle",
-      imgSrc: '/images/courses/coursetwo.png',
+      imgSrc: '/images/services/Incident_management.png',
       students: 130,
       classes: 12,
       price: 20,
@@ -55,7 +55,7 @@ export const servicesData: {
     {
       heading: 'Manual Regression Testing',
       name: "Colt stelle",
-      imgSrc: '/images/courses/coursethree.png',
+      imgSrc: '/images/services/Manual_Regression_Testing.png',
       students: 120,
       classes: 12,
       price: 20,
@@ -64,7 +64,7 @@ export const servicesData: {
     {
       heading: 'Assesment as a Service',
       name: "Colt stelle",
-      imgSrc: '/images/courses/courseone.png',
+      imgSrc: '/images/services/Assesment_as_a_Service.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -73,7 +73,7 @@ export const servicesData: {
     {
       heading: 'Configure and code integrations',
       name: "Colt stelle",
-      imgSrc: '/images/courses/coursetwo.png',
+      imgSrc: '/images/services/Configure_and_code_integrations.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -82,24 +82,24 @@ export const servicesData: {
     {
       heading: 'Bespoke Application Development',
       name: "Colt stelle",
-      imgSrc: '/images/courses/coursethree.png',
+      imgSrc: '/images/services/Bespoke_Application_Development.png',
       students: 150,
       classes: 12,
       price: 20,
       rating: 4.2,
     },
-    {
-      heading: 'Many more',
-      name: "Colt stelle",
-      imgSrc: '/images/courses/coursethree.png',
-      students: 150,
-      classes: 12,
-      price: 20,
-      rating: 4.2,
-    },
+    // {
+    //   heading: 'Many more',
+    //   name: "Colt stelle",
+    //   imgSrc: '/images/courses/courseone.png',
+    //   students: 150,
+    //   classes: 12,
+    //   price: 20,
+    //   rating: 4.2,
+    // },
   ]
 
-export const MentorData: { profession: string; name: string; imgSrc: string }[] = [
+export const ExpertiseData: { profession: string; name: string; imgSrc: string }[] = [
   {
     profession: 'Senior UX Designer',
     name: 'Shoo Thar Mien',

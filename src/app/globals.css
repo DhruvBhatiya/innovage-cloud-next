@@ -35,3 +35,12 @@ section {
 .text-primary{
   color: rgb(200 71 54);
 }
+
+.card-expe{
+  border-radius: 10px;
+  border: 1px solid #ECECEC;
+  box-shadow: 4px 4px 8px 0px rgba(30, 30, 30, .08);
+}
+.card-expe:hover .card-icon{
+  background-color: rgb(200 71 54) !important;
+}
