@@ -1,57 +1,30 @@
 export const TruestedCompanies: { imgSrc: string }[] = [
   {
-    imgSrc: "/images/companies/airbnb.svg"
+    imgSrc: "/img/companies/algihaz_holding.png"
   },
   {
-    imgSrc: "/images/companies/fedex.svg"
+    imgSrc: "/img/companies/altus.jpg"
   },
   {
-    imgSrc: "/images/companies/google.svg"
+    imgSrc: "/img/companies/Hexaware.jpg"
   },
   {
-    imgSrc: "/images/companies/hubspot.svg"
+    imgSrc: "/img/companies/hic.png"
   },
   {
-    imgSrc: "/images/companies/microsoft.svg"
+    imgSrc: "/img/companies/Mastek.png"
   },
   {
-    imgSrc: "/images/companies/walmart.svg"
+    imgSrc: "/img/companies/Shiftpurple.png"
   },
   {
-    imgSrc: "/images/companies/airbnb.svg"
+    imgSrc: "/img/companies/tahaluaf.png"
   },
-  {
-    imgSrc: "/images/companies/fedex.svg"
-  }
+ 
 ]
 
 
-// submenu: [
-//   {
-//     label: "Off-shore technical support",
-//     href: "/services/#off-shore-technical-support",
-//   },
-//   {
-//     label: "Incident management",
-//     href: "/services/#incident-management",
-//   },
-//   {
-//     label: "Manual Regression Testing",
-//     href: "/services/#manual-regression-testing",
-//   },
-//   {
-//     label: "Assessment as a Service",
-//     href: "/services/#assessment-as-a-service",
-//   },
-//   {
-//     label: "Configure and Code Integrations",
-//     href: "/services/#configure-and-code-integrations",
-//   },
-//   {
-//     label: "Bespoke Application Development",
-//     href: "/services/#bespoke-application-development",
-//   },
-// ],
+
 
 
 export const servicesData: {
@@ -68,7 +41,7 @@ export const servicesData: {
       heading: 'Off-shore technical support',
       href: "/services/#off-shore-technical-support",
       name: "Colt stelle",
-      imgSrc: '/images/services/Off-shore_technical_support.png',
+      imgSrc: '/img/services/Off-shore_technical_support.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -78,7 +51,7 @@ export const servicesData: {
       heading: 'Incident management',
       href: "/services/#incident-management",
       name: "Colt stelle",
-      imgSrc: '/images/services/Incident_management.png',
+      imgSrc: '/img/services/Incident_management.png',
       students: 130,
       classes: 12,
       price: 20,
@@ -88,7 +61,7 @@ export const servicesData: {
       heading: 'Manual Regression Testing',
       href: "/services/#manual-regression-testing",
       name: "Colt stelle",
-      imgSrc: '/images/services/Manual_Regression_Testing.png',
+      imgSrc: '/img/services/Manual_Regression_Testing.png',
       students: 120,
       classes: 12,
       price: 20,
@@ -98,7 +71,7 @@ export const servicesData: {
       heading: 'Assesment as a Service',
       href: "/services/#assessment-as-a-service",
       name: "Colt stelle",
-      imgSrc: '/images/services/Assesment_as_a_Service.png',
+      imgSrc: '/img/services/Assesment_as_a_Service.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -108,7 +81,7 @@ export const servicesData: {
       heading: 'Configure and code integrations',
       href: "/services/#configure-and-code-integrations",
       name: "Colt stelle",
-      imgSrc: '/images/services/Configure_and_code_integrations.png',
+      imgSrc: '/img/services/Configure_and_code_integrations.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -118,7 +91,7 @@ export const servicesData: {
       heading: 'Bespoke Application Development',
       href: "/services/#bespoke-application-development",
       name: "Colt stelle",
-      imgSrc: '/images/services/Bespoke_Application_Development.png',
+      imgSrc: '/img/services/Bespoke_Application_Development.png',
       students: 150,
       classes: 12,
       price: 20,
@@ -127,13 +100,52 @@ export const servicesData: {
     // {
     //   heading: 'Many more',
     //   name: "Colt stelle",
-    //   imgSrc: '/images/courses/courseone.png',
+    //   imgSrc: '/img/courses/courseone.png',
     //   students: 150,
     //   classes: 12,
     //   price: 20,
     //   rating: 4.2,
     // },
   ]
+
+  export const expertisePage : { title: string; content: string; image: string; id: string }[] = [
+    {
+        title: "OIC - Oracle Integration Cloud",
+        content: "Automate and streamline business processes with Oracle Integration Cloud, enabling seamless connectivity between applications.",
+        image: "/img/expertise/OIC_Oracle_Integration_Cloud.png",
+        id: "oic",
+    },
+    {
+        title: "VBCS - Visual Builder Cloud Service",
+        content: "Develop web and mobile applications rapidly with Oracle VBCS, a low-code development platform.",
+        image: "/img/expertise/VBCS_VisualBuilderCloud_Service.png",
+        id: "vbcs",
+    },
+    {
+        title: "PCS - Process Cloud Service",
+        content: "Orchestrate complex business workflows with Oracle PCS, enhancing process automation and efficiency.",
+        image: "/img/expertise/PCS_ProcessCloudService.png",
+        id: "pcs",
+    },
+    {
+        title: "Apex Development",
+        content: "Build scalable, secure web applications using Oracle APEX with minimal coding effort.",
+        image: "/img/expertise/ApexDevelopment.png",
+        id: "apex-development",
+    },
+    {
+        title: "Java Development",
+        content: "Develop robust enterprise applications with Java, leveraging its scalability and performance.",
+        image: "/img/expertise/JavaDevelopment.png",
+        id: "java-development",
+    },
+    {
+        title: "Database",
+        content: "Optimize database management, performance tuning, and security with Oracle Database solutions.",
+        image: "/img/expertise/Database.png",
+        id: "database",
+    },
+];
 
 export const ExpertiseData: { profession: string; name: string; imgSrc: string }[] = [
   {

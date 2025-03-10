@@ -11,37 +11,37 @@ const sections = [
     {
         title: "Off-shore technical support",
         content: "We provide offshore technical support to ensure smooth business operations with minimal downtime.",
-        image: "/images/services/Off-shore_technical_support.png",
+        image: "/img/services/Off-shore_technical_support.png",
         id: "off-shore-technical-support",
     },
     {
         title: "Incident management",
         content: "Efficiently handling incidents to minimize impact and restore services as quickly as possible.",
-        image: "/images/services/Incident_management.png",
+        image: "/img/services/Incident_management.png",
         id: "incident-management",
     },
     {
         title: "Manual Regression Testing",
         content: "Thorough manual regression testing to maintain application stability after updates.",
-        image: "/images/services/Manual_Regression_Testing.png",
+        image: "/img/services/Manual_Regression_Testing.png",
         id: "manual-regression-testing",
     },
     {
         title: "Assessment as a Service",
         content: "Helping businesses evaluate their technical infrastructure and optimize performance.",
-        image: "/images/services/Assesment_as_a_Service.png",
+        image: "/img/services/Assesment_as_a_Service.png",
         id: "assessment-as-a-service",
     },
     {
         title: "Configure and Code Integrations",
         content: "Seamless integration of applications to enhance workflow automation and efficiency.",
-        image: "/images/services/Configure_and_code_integrations.png",
+        image: "/img/services/Configure_and_code_integrations.png",
         id: "configure-and-code-integrations",
     },
     {
         title: "Bespoke Application Development",
         content: "Custom application development tailored to your business needs for maximum efficiency.",
-        image: "/images/services/Bespoke_Application_Development.png",
+        image: "/img/services/Bespoke_Application_Development.png",
         id: "bespoke-application-development",
     },
 ];

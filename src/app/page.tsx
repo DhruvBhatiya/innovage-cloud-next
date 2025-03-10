@@ -16,11 +16,11 @@ export default function Home() {
     <main>
       <Hero />
       <Services />
+      <Companies />
       <Expertise />
       {/* <Testimonial /> */}
       {/* <Counter  /> */}
       {/* <Newsletter /> */}
-      <Companies />
     </main>
   );
 }

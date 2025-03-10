@@ -1,9 +1,10 @@
 
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import EmailIcon from "@mui/icons-material/Email";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import { Box, Container, Grid, Typography } from "@mui/material";
 
 import Breadcrumb from "@/components/Common/Breadcrumb";
 
@@ -14,47 +15,6 @@ const Contact = () => {
             <Breadcrumb pageName="Contact Us" />
 
             <>
-                {/* Contact Info Section */}
-                <section className="relative bg-gradient-to-b from-gray-100 to-white pt-6 md:pt-10">
-                    {/* <div className="absolute inset-0 bg-left-top w-full h-full z-[-1]">
-                        <Image
-                            src="/images/demo-seo-agency-vertical-line-bg.svg"
-                            alt="Background"
-                            layout="fill"
-                            objectFit="cover"
-                        />
-                    </div> */}
-
-                    <div className="container mx-auto">
-                        <div className="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-3 gap-6">
-                            {/* Address Box */}
-                            <div className="text-center p-6 bg-white shadow-md rounded-lg">
-                                <i className="bi bi-geo-alt text-4xl text-gray-700 mb-4"></i>
-                                <h3 className="font-bold text-xl text-gray-800">Crafto Office</h3>
-                                <p className="text-gray-600">401 Broadway, 24th floor<br /> New York, NY 10013</p>
-                            </div>
-
-                            {/* Phone Box */}
-                            <div className="text-center p-6 bg-white shadow-md rounded-lg">
-                                <i className="bi bi-telephone-outbound text-4xl text-gray-700 mb-4"></i>
-                                <h3 className="font-bold text-xl text-gray-800">Call Us Directly</h3>
-                                <p className="text-gray-600">
-                                    Phone: <a href="tel:1800222000" className="text-blue-600">1-800-222-000</a><br />
-                                    Fax: 1-800-222-002
-                                </p>
-                            </div>
-
-                            {/* Email Box */}
-                            <div className="text-center p-6 bg-white shadow-md rounded-lg">
-                                <i className="bi bi-envelope-open text-4xl text-gray-700 mb-4"></i>
-                                <h3 className="font-bold text-xl text-gray-800">Send a Message</h3>
-                                <p className="text-gray-600">
-                                    <a href="mailto:contact@example.com" className="text-blue-600">contact@example.com</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Contact Form Section */}
                 <section className="relative overflow-hidden pb-0">
@@ -66,17 +26,22 @@ const Contact = () => {
                             {/* Map */}
                             <div className="h-[400px] md:h-[600px] bg-gray-200">
                                 {/* Embed your Google Map here */}
+
                                 <iframe
-                                    className="w-full h-full"
-                                    src="https://www.google.com/maps/embed?..."
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.2581307491932!2d72.51579287386683!3d23.05099621526961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b701695c397%3A0x37f7eac0feed6e52!2sTitanium%20Square!5e0!3m2!1sen!2sin!4v1741589479917!5m2!1sen!2sin"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 0 }}
                                     allowFullScreen
                                     loading="lazy"
-                                ></iframe>
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                />
+
                             </div>
 
                             {/* Contact Form */}
                             <div className="bg-gray-900 text-white p-10">
-                                <h1 className="text-4xl font-semibold mb-6">Say <span className="text-blue-400">Hello!</span></h1>
+                                <h1 className="text-4xl font-semibold mb-6">Say <span className="text-[#c84736]">Hello!</span></h1>
 
                                 <form action="email-templates/contact-form.php" method="post">
                                     <div className="mb-4">
@@ -94,7 +59,7 @@ const Contact = () => {
                                         <textarea name="comment" placeholder="Enter your message" rows={4} className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"></textarea>
                                     </div>
 
-                                    <button type="submit" className="w-full bg-gradient-to-r from-orange-500 to-blue-500 text-white py-2 rounded-md hover:opacity-90">
+                                    <button type="submit" className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90">
                                         Send Message
                                     </button>
                                 </form>
@@ -106,6 +71,93 @@ const Contact = () => {
                         </div>
                     </div>
                 </section>
+
+                {/* Contact Info Section */}
+                <section className="relative ">
+                    <Box sx={{ position: "relative", }}>
+                        <Container>
+                            <Grid container spacing={4} justifyContent="center">
+                                {/* Address Box */}
+                                <Grid item xs={12} sm={4}>
+                                    <Box
+                                        sx={{
+                                            textAlign: "center",
+                                            p: 4,
+                                            backgroundColor: "white",
+                                            borderRadius: "8px",
+                                            boxShadow: 3,
+                                        }}
+                                    >
+                                        <LocationOnIcon sx={{ fontSize: 50, color: "#c84736", mb: 2 }} />
+                                        <Typography variant="h6" fontWeight="bold">
+                                            Office
+                                        </Typography>
+                                        <Typography variant="body1" color="text.secondary">
+                                            A-406, Titanium Square, <br />Near, Thaltej Metro Station, <br />Thaltej, Ahmedabad- 380054
+                                        </Typography>
+                                    </Box>
+                                </Grid>
+
+                                {/* Phone Box */}
+                                <Grid item xs={12} sm={4}>
+                                    <Box
+                                        sx={{
+                                            textAlign: "center",
+                                            p: 4,
+                                            backgroundColor: "white",
+                                            borderRadius: "8px",
+                                            boxShadow: 3,
+                                        }}
+                                    >
+                                        <PhoneIcon sx={{ fontSize: 50, color: "#c84736", mb: 2 }} />
+                                        <Typography variant="h6" fontWeight="bold">
+                                            Call Us Directly
+                                        </Typography>
+                                        <Typography variant="body1" color="text.secondary">
+                                            Phone:{" "}
+                                            <a href="tel:+919023635219" style={{ color: "#007bff" }}>
+                                                +91 9023635219</a>
+                                            <br />
+                                            <a href="tel:+919512386103" style={{ color: "#007bff" }}>
+                                                +91 9512386103
+                                            </a>
+
+                                        </Typography>
+                                    </Box>
+                                </Grid>
+
+                                {/* Email Box */}
+                                <Grid item xs={12} sm={4}>
+                                    <Box
+                                        sx={{
+                                            textAlign: "center",
+                                            p: 4,
+                                            backgroundColor: "white",
+                                            borderRadius: "8px",
+                                            boxShadow: 3,
+                                        }}
+                                    >
+                                        <EmailIcon sx={{ fontSize: 50, color: "#c84736", mb: 2 }} />
+                                        <Typography variant="h6" fontWeight="bold">
+                                            Send a Message
+                                        </Typography>
+                                        <Typography variant="body1" color="text.secondary">
+                                            <a href="mailto:info@yourdomain.com" style={{ color: "#007bff" }}>
+                                            info@innovagecloud.com
+                                            </a>
+                                        </Typography>
+                                        {/* <Typography variant="body1" color="text.secondary">
+                                            <a href="mailto:hr@yourdomain.com" style={{ color: "#007bff" }}>
+                                                hr@yourdomain.com
+                                            </a>
+                                        </Typography> */}
+                                    </Box>
+                                </Grid>
+                            </Grid>
+                        </Container>
+                    </Box>
+                </section>
+
             </>
         </div>
     )

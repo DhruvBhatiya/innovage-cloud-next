@@ -7,7 +7,7 @@ const Hero = () => {
         <section id="home-section" className='bg-slateGray !pb-0'
             style={{ backgroundImage: `url('/images/bg/hero-bg.jpg')`, backgroundRepeat: 'no-repeat' }}
         >
-            <div className='pb-20 relative top-[1px]' style={{ backgroundImage: `url('/images/bg/cloud-bottom-bg.png')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center bottom', zIndex: 1, backgroundSize: '100%' }}>
+            <div className='pb-20 relative top-[1px]' style={{ backgroundImage: `url('/img/bg/cloud-bottom-bg.png')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center bottom', zIndex: 1, backgroundSize: '100%' }}>
                 <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4 pt-10 mb-16 "
 
                 >

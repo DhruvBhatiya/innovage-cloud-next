@@ -6,7 +6,7 @@ import { headerData } from "../Header/Navigation/menuData";
 
 const footer = () => {
   return (
-    <footer className="bg-deepSlate py-10">
+    <footer className="bg-deepSlate pt-[70px] pb-10" style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }} >
       <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
         <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
           <div className='col-span-4 md:col-span-12 lg:col-span-4'>
@@ -17,17 +17,17 @@ const footer = () => {
             </div>
 
             <div className='flex items-center gap-4'>
-              <Link href="https://facebook.com" className='hover:text-primary text-black text-3xl'>
+              <Link href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A102303794&keywords=innovage%20cloud&origin=RICH_QUERY_SUGGESTION&position=0&searchId=3a9e7be1-3687-4c07-ac60-6b62caffc406&sid=n_6&spellCorrectionEnabled=false" target="_blank" className='hover:text-primary text-black text-3xl'>
                 <Icon
-                  icon="tabler:brand-facebook"
+                  icon="tabler:brand-linkedin"
                 />
               </Link>
-              <Link href="https://twitter.com" className='hover:text-primary text-black text-3xl'>
+              <Link href="https://twitter.com" target="_blank" className='hover:text-primary text-black text-3xl'>
                 <Icon
-                  icon="tabler:brand-twitter"
+                  icon="tabler:brand-x"
                 />
               </Link>
-              <Link href="https://instagram.com" className='hover:text-primary text-black text-3xl'>
+              <Link href="https://instagram.com" target="_blank" className='hover:text-primary text-black text-3xl'>
                 <Icon
                   icon="tabler:brand-instagram"
                 />
@@ -80,7 +80,7 @@ const footer = () => {
             <div className="flex items-center gap-2">
               <Icon
                 icon="tabler:brand-google-maps"
-                className="text-primary text-3xl inline-block me-2"
+                className="text-primary text-3xl inline-block me-2 w-[60px]"
               />
               <h5 className="text-lg text-black/60">A-406, Titanium Square, Near, Thaltej Metro Station, Thaltej, Ahmedabad- 380054</h5>
             </div>
@@ -97,7 +97,7 @@ const footer = () => {
                 icon="tabler:folder"
                 className="text-primary text-3xl inline-block me-2"
               />
-              <h5 className="text-lg text-black/60">info@gmail.com</h5>
+              <h5 className="text-lg text-black/60">info@innovagecloud.com</h5>
             </div>
           </div>
         </div>

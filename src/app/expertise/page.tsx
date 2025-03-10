@@ -5,46 +5,10 @@ import { Container, Grid, Typography, Box } from "@mui/material";
 import Image from "next/image";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { expertisePage } from "../api/data";
 
 // Expertise sections with titles, descriptions, images, and IDs
-const expertiseSections = [
-    {
-        title: "OIC - Oracle Integration Cloud",
-        content: "Automate and streamline business processes with Oracle Integration Cloud, enabling seamless connectivity between applications.",
-        image: "/images/expertise/OIC.png",
-        id: "oic",
-    },
-    {
-        title: "VBCS - Visual Builder Cloud Service",
-        content: "Develop web and mobile applications rapidly with Oracle VBCS, a low-code development platform.",
-        image: "/images/expertise/VBCS.png",
-        id: "vbcs",
-    },
-    {
-        title: "PCS - Process Cloud Service",
-        content: "Orchestrate complex business workflows with Oracle PCS, enhancing process automation and efficiency.",
-        image: "/images/expertise/PCS.png",
-        id: "pcs",
-    },
-    {
-        title: "Apex Development",
-        content: "Build scalable, secure web applications using Oracle APEX with minimal coding effort.",
-        image: "/images/expertise/APEX.png",
-        id: "apex-development",
-    },
-    {
-        title: "Java Development",
-        content: "Develop robust enterprise applications with Java, leveraging its scalability and performance.",
-        image: "/images/expertise/Java.png",
-        id: "java-development",
-    },
-    {
-        title: "Database",
-        content: "Optimize database management, performance tuning, and security with Oracle Database solutions.",
-        image: "/images/expertise/Database.png",
-        id: "database",
-    },
-];
+
 
 const Expertise = () => {
     const path = usePathname();
@@ -66,7 +30,7 @@ const Expertise = () => {
         <div>
             <Breadcrumb pageName="Our Expertise" />
 
-            {expertiseSections.map((section, index) => (
+            {expertisePage.map((section, index) => (
                 <Box
                     key={section.id}
                     id={section.id}

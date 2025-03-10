@@ -67,18 +67,16 @@ const Services = () => {
             <div className='container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4'>
                 <div className="sm:flex justify-between items-center mb-10">
                     <div className="text-white w-1/2">
-                        <h2 className="11text-midnight_text text-white text-4xl lg:text-5xl font-semibold mb-4">Our Services</h2>
+                        <h2 className="11text-midnight_text text-white text-4xl lg:text-5xl font-semibold mb-4 ">Our Services</h2>
                         <p>We provide offshore technical support to ensure smooth business operations with minimal downtime.</p>
                     </div>
-                    <Link href={'/services'} className="11text-primary text-white text-lg font-medium hover:tracking-widest duration-500">
-                        Explore Services&nbsp;&gt;&nbsp;
-                    </Link>
+                    <Link href={'/services'} className="11text-primary text-white text-lg font-medium hover:tracking-widest duration-500">Explore Services&nbsp;&gt;&nbsp;</Link>
                 </div>
                 <Slider {...settings}>
                     {servicesData.map((items, i) => (
                         <div key={i} className="!h-full">
                             <div
-                                className="bg-white m-3 px-3 pt-3 pb-3 rounded-sm !h-full shadow-md group transform transition-transform duration-300 ease-in-out hover:scale-105"
+                                className="bg-white m-3 px-3 pt-3 pb-3 rounded-sm !h-full shadow-md group"
                                 style={{
                                     boxShadow:
                                         "rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
@@ -91,7 +89,7 @@ const Services = () => {
                                         alt="course-image"
                                         width={389}
                                         height={262}
-                                        className="m-auto clipPath"
+                                        className="m-auto clipPath transition-transform duration-300 ease-in-out group-hover:scale-125"
                                         style={{ borderRadius: "20px 0px 100px" }}
                                     />
                                 </div>
@@ -107,6 +105,7 @@ const Services = () => {
                                 </div>
                             </div>
                         </div>
+
                     ))}
                 </Slider>
             </div>

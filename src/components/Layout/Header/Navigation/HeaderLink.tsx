@@ -4,7 +4,7 @@ import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
 
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const HeaderLink: React.FC<{ item: HeaderItem; sticky: any }> = ({ item, sticky }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const path = usePathname();
   const [isActive, setIsActive] = useState(false);
@@ -50,13 +50,23 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseLeave={() => setSubmenuOpen(false)}
     >
       {item.submenu ? (
-        <button
+        <Link
+          href={item.href}
           onClick={toggleSubmenu}
           onKeyDown={handleKeyDown}
-          className={`text-lg flex items-center hover:text-black capitalize relative ${isActive
-              ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
-              : "text-gray-500"
-            }`}
+          // className={`text-lg flex items-center hover:text-black capitalize relative 
+          //    ${isActive
+          //     ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+          //     : "text-gray-500"
+          //   }`}
+          className={`text-lg flex items-center  ${sticky ? 'hover:font-medium' : 'hover:text-black'} capitalize relative 
+             ${sticky ? isActive
+              ? "text-white after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+              : "text-[#ededed]"
+              :
+              isActive
+                ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+                : "text-gray-500"}`}
           aria-haspopup="true"
           aria-expanded={submenuOpen}
         >
@@ -77,19 +87,29 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
               d="m7 10l5 5l5-5"
             />
           </svg>
-        </button>
+        </Link>
       ) : (
         <Link
-        href={item.href}
-        className={`relative text-lg flex items-center hover:text-black capitalize ${
-          isActive
-            ? "text-black after:absolute after:left-0 after:bottom-0 after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:transition-all after:duration-300"
-            : "text-gray-500"
-        }`}
-      >
-        {item.label}
-      </Link>
-      
+          href={item.href}
+          prefetch={true}
+          // className={`relative text-lg flex items-center hover:text-black capitalize ${
+          //   isActive
+          //     ? "text-black after:absolute after:left-0 after:bottom-0 after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:transition-all after:duration-300"
+          //     : "text-gray-500"
+          // }`}
+
+          className={`text-lg flex items-center  ${sticky ? 'hover:font-medium' : 'hover:text-black'} capitalize relative 
+        ${sticky ? isActive
+              ? "text-white after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+              : "text-[#ededed]"
+              :
+              isActive
+                ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+                : "text-gray-500"}`}
+        >
+          {item.label}
+        </Link>
+
       )}
 
       {submenuOpen && item.submenu && (
@@ -103,10 +123,11 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             return (
               <Link
                 key={index}
+                prefetch={true}
                 href={subItem.href}
                 className={`block px-4 py-2 ${isSubItemActive
-                    ? "bg-primary text-white"
-                    : "text-black dark:text-white hover:bg-[#c84736] hover:text-white"
+                  ? "bg-primary text-white"
+                  : "text-black dark:text-white hover:bg-[#c84736] hover:text-white"
                   }`}
               >
                 {subItem.label}

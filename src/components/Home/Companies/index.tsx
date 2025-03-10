@@ -16,8 +16,8 @@ const Companies = () => {
         slidesToScroll: 1,
         arrows: false,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 2000,
+        speed: 3000,
+        autoplaySpeed: 3000,
         cssEase: "linear",
         responsive: [
             {
@@ -51,7 +51,7 @@ const Companies = () => {
     };
 
     return (
-        <section className='text-center !pt-0 !pb-8' >
+        <section className='text-center pt-[70px] pb-0' >
             <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
                 <h2 className="text-midnight_text text-2xl font-semibold">Trusted by companies of all sizes</h2>
                 <div className="py-14 11border-b ">

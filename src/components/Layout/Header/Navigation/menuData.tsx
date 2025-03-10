@@ -49,17 +49,25 @@ export const headerData: HeaderItem[] = [
     ],
   },
   {
-    label: "Expertise",
-    href: "/expertise",
+    label: "Career",
+    href: "/career",
     submenu: [
-      { label: "OIC - Oracle Integration Cloud", href: "/expertise/#oic" },
-      { label: "VBCS - Visual Builder Cloud Service", href: "/expertise/#vbcs" },
-      { label: "PCS - Process Cloud Service", href: "/expertise/#pcs" },
-      { label: "Apex Development", href: "/expertise/#apex-development" },
-      { label: "Java Development", href: "/expertise/#java-development" },
-      { label: "Database", href: "/expertise/#database" },
+      { label: "Job Openings", href: "/career/#job-openings" },
+      { label: "Life at Innovage", href: "/career/#life-at-innovage" },
     ],
   },
+  // {
+  //   label: "Expertise",
+  //   href: "/expertise",
+  //   submenu: [
+  //     { label: "OIC - Oracle Integration Cloud", href: "/expertise/#oic" },
+  //     { label: "VBCS - Visual Builder Cloud Service", href: "/expertise/#vbcs" },
+  //     { label: "PCS - Process Cloud Service", href: "/expertise/#pcs" },
+  //     { label: "Apex Development", href: "/expertise/#apex-development" },
+  //     { label: "Java Development", href: "/expertise/#java-development" },
+  //     { label: "Database", href: "/expertise/#database" },
+  //   ],
+  // },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];

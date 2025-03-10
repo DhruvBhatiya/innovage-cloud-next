@@ -21,7 +21,7 @@ const expertiseItems = [
 
 const Expertise = () => {
   return (
-    <div className="py-[70px]">
+    <div className="py-[70px] mb-16">
       <section
         className="bg-deepSlate !py-0"
         style={{ height: "calc(100% - 200px)" }} // Dynamic height minus 200px
@@ -111,7 +111,7 @@ const Expertise = () => {
                         </Typography>
 
                         {/* View More Link */}
-                        <Link
+                        {/* <Link
                           href={item.href}
                           underline="hover"
                           sx={{
@@ -124,7 +124,7 @@ const Expertise = () => {
                           }}
                         >
                           View More
-                        </Link>
+                        </Link> */}
                       </CardContent>
                     </Card>
                   </Grid>
