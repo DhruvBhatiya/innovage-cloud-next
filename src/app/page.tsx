@@ -7,6 +7,7 @@ import Testimonial from "@/components/Home/Testimonials";
 import Newsletter from "@/components/Home/Newsletter";
 import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
+import ContactForm from "@/components/Home/ContactForm";
 export const metadata: Metadata = {
   title: "Innovage Cloud",
 };
@@ -21,6 +22,7 @@ export default function Home() {
       {/* <Testimonial /> */}
       {/* <Counter  /> */}
       {/* <Newsletter /> */}
+      <ContactForm />
     </main>
   );
 }
