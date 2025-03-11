@@ -13,6 +13,7 @@ import SignUp from "@/components/Auth/SignUp";
 import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CloseIcon from '@mui/icons-material/Close';
+import GetAQuote from "@/components/Auth/GetAQuote";
 
 const Header: React.FC = () => {
   const pathUrl = usePathname();
@@ -20,7 +21,7 @@ const Header: React.FC = () => {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
+  const [isQuoteOpen, setIsQuoteInOpen] = useState(false);
   const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const navbarRef = useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ const Header: React.FC = () => {
       signInRef.current &&
       !signInRef.current.contains(event.target as Node)
     ) {
-      setIsSignInOpen(false);
+      setIsQuoteInOpen(false);
     }
     if (
       signUpRef.current &&
@@ -61,33 +62,35 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [navbarOpen, isSignInOpen, isSignUpOpen]);
+  }, [navbarOpen, isQuoteOpen, isSignUpOpen]);
 
   useEffect(() => {
-    if (isSignInOpen || isSignUpOpen || navbarOpen) {
+    if (isQuoteOpen || isSignUpOpen || navbarOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [isSignInOpen, isSignUpOpen, navbarOpen]);
+  }, [isQuoteOpen, isSignUpOpen, navbarOpen]);
 
 
   return (
     <>
       <header
-        className={`fixed top-0 z-40 w-full  transition-all duration-300 bg-[#ffffffe8] ${sticky ? " shadow-lg py-0 bg-black !text-white" : "shadow-none py-2"
+        className={`fixed top-0 z-40 w-full  transition-all duration-300 11bg-[#ffffffe8] ${sticky ? " shadow-lg py-0 bg-[#000000c2] !text-white" : "bg-[#ffffffe8] shadow-none py-2"
           }`}
       >
 
         <div className="lg:py-0 py-2">
           <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md flex items-center justify-between px-4">
             {sticky ?
-              <Image
-                src="/img/logo/logo-text.svg"
-                alt="Company Logo"
-                width={160}
-                height={100}
-              />
+              <Link href="/">
+                <Image
+                  src="/img/logo/logo-text.svg"
+                  alt="Company Logo"
+                  width={160}
+                  height={100}
+                />
+              </Link>
               :
               <Logo />
             }
@@ -100,21 +103,21 @@ const Header: React.FC = () => {
             <div className="flex items-center gap-4">
               <Link
                 href="#"
-                className="hidden lg:block bg-primary text-white hover:bg-primary/15 hover:text-primary px-8 py-2 rounded-full text-lg font-medium"
+                className="hidden lg:block bg-primary text-white hover:bg-primary/15 11hover:text-primary hover:opacity-90 px-8 py-2 rounded-full text-lg font-medium"
                 onClick={() => {
-                  setIsSignInOpen(true);
+                  setIsQuoteInOpen(true);
                 }}
               >
                 Get a quote
               </Link>
-              {isSignInOpen && (
+              {isQuoteOpen && (
                 <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
                   <div
                     ref={signInRef}
-                    className="relative mx-auto w-full max-w-md overflow-hidden rounded-lg px-8 pt-14 pb-8 text-center bg-white"
+                    className="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg px-8 pt-14 pb-8 text-center bg-white"
                   >
                     <button
-                      onClick={() => setIsSignInOpen(false)}
+                      onClick={() => setIsQuoteInOpen(false)}
                       className="absolute top-0 right-0 mr-8 mt-8 dark:invert"
                       aria-label="Close Get a quote Modal"
                     >
@@ -123,7 +126,7 @@ const Header: React.FC = () => {
                         className="text-black hover:text-primary text-24 inline-block me-2"
                       />
                     </button>
-                    <Signin />
+                    <GetAQuote />
                   </div>
                 </div>
               )}
@@ -197,7 +200,7 @@ const Header: React.FC = () => {
                   href="#"
                   className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
                   onClick={() => {
-                    setIsSignInOpen(true);
+                    setIsQuoteInOpen(true);
                     setNavbarOpen(false);
                   }}
                 >

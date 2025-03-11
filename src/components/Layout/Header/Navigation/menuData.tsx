@@ -52,8 +52,8 @@ export const headerData: HeaderItem[] = [
     label: "Career",
     href: "/career",
     submenu: [
-      { label: "Job Openings", href: "/career/#job-openings" },
-      { label: "Life at Innovage", href: "/career/#life-at-innovage" },
+      { label: "Job Openings", href: "/job-openings" },
+      { label: "Life at Innovage", href: "/life-at-innovage" },
     ],
   },
   // {
