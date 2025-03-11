@@ -21,7 +21,7 @@ const ContactForm = () => {
                             src="/img/home/contactus.avif"
                             alt="Contact Us Illustration"
                             className="w-full h-auto"
-                            width={300}
+                            width={400}
                             height={100}
                         />
                     </Box>

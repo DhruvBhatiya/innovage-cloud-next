@@ -87,7 +87,7 @@ const Header: React.FC = () => {
                 <Image
                   src="/img/logo/logo-text.svg"
                   alt="Company Logo"
-                  width={160}
+                  width={180}
                   height={100}
                 />
               </Link>

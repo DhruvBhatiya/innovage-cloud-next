@@ -23,31 +23,36 @@ export const headerData: HeaderItem[] = [
     href: "/services",
     submenu: [
       {
-        label: "Off-shore technical support",
-        href: "/services/#off-shore-technical-support",
-      },
-      {
-        label: "Incident management",
-        href: "/services/#incident-management",
-      },
-      {
-        label: "Manual Regression Testing",
-        href: "/services/#manual-regression-testing",
-      },
-      {
-        label: "Assessment as a Service",
-        href: "/services/#assessment-as-a-service",
-      },
-      {
-        label: "Configure and Code Integrations",
-        href: "/services/#configure-and-code-integrations",
+        label: "Seamless Integrations & Custom API Development",
+        href: "/services/#seamless-integrations-and-api-development",
       },
       {
         label: "Bespoke Application Development",
         href: "/services/#bespoke-application-development",
       },
+      {
+        label: "Oracle Fusion Cloud Implementation",
+        href: "/services/#oracle-fusion-cloud-implementation",
+      },
+      {
+        label: "Off-shore Technical Support & Resource Augmentation",
+        href: "/services/#off-shore-technical-support-and-resource-augmentation",
+      },
+      {
+        label: "AI & Automation",
+        href: "/services/#ai-and-automation",
+      },
+      {
+        label: "Cloud Migrations & Management",
+        href: "/services/#cloud-migrations-and-management",
+      },
+      {
+        label: "Data Analytics & Reporting",
+        href: "/services/#data-analytics-and-reporting",
+      },
     ],
   },
+
   {
     label: "Career",
     href: "/career",

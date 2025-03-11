@@ -63,14 +63,9 @@ const Services = () => {
                         // alignItems="center"
 
                         >
-
-                            <Grid item xs={12} md={12}>
-                                <Box sx={{
-                                    textAlign: "center",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center"
-                                }}>
+                            {/* Text Content */}
+                            <Grid item xs={12} md={6}>
+                                <Box>
                                     <Typography color="#c84736" variant="h4" fontWeight="bold" gutterBottom>
                                         {section.title}
                                     </Typography>
@@ -79,44 +74,34 @@ const Services = () => {
                                     <Typography variant="body1" color="text.secondary" paragraph>
                                         {section.content.description}
                                     </Typography>
-                                </Box>
-                            </Grid>
-
-
-                            {/* Text Content */}
-                            <Grid item xs={12} md={6}>
-                                <Box sx={{
-                                    textAlign: "center",
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center"
-                                }}>
-                                  
 
                                     {/* Services List */}
-                                    <Box component="ul" sx={{ pl: 3, textAlign: "left" }}>
-                                        {section.content.services && section.content.services.map((service) => (
-                                            <Box component="li" key={service.title} sx={{ mb: 1 }}>
-                                                <Typography variant="subtitle1" fontWeight="bold">
-                                                    {service.title}
-                                                </Typography>
-                                                <Typography variant="body2" color="text.secondary">
-                                                    {service.detail}
-                                                </Typography>
+                                    <Box component="ul" sx={{ pl: 3 }}>
+                                        {section.content.services && section.content.services.map((service) => {
+                                            return (
+                                                <Box component="li" key={service.title} sx={{ mb: 1 }}>
+                                                    <Typography variant="subtitle1" fontWeight="bold">
+                                                        {service.title}
+                                                    </Typography>
+                                                    <Typography variant="body2" color="text.secondary">
+                                                        {service.detail}
+                                                    </Typography>
 
-                                                {service.moredata && (
-                                                    <Box component="ul" sx={{ pl: 3, listStyleType: 'disc' }}>
-                                                        {service.moredata.map((dt, index) => (
-                                                            <Box component="li" key={index} sx={{ mb: 1 }}>
-                                                                <Typography variant="body2" color="text.secondary">
-                                                                    {dt}
-                                                                </Typography>
-                                                            </Box>
-                                                        ))}
-                                                    </Box>
-                                                )}
-                                            </Box>
-                                        ))}
+                                                    {service.moredata && (
+                                                        <Box component="ul" sx={{ pl: 3, listStyleType: 'disc' }}>
+                                                            {service.moredata.map((dt, index) => (
+                                                                <Box component="li" key={index} sx={{ mb: 1 }}>
+                                                                    <Typography variant="body2" color="text.secondary">
+                                                                        {dt}
+                                                                    </Typography>
+                                                                </Box>
+                                                            ))}
+                                                        </Box>
+                                                    )}
+
+                                                </Box>
+                                            )
+                                        })}
                                     </Box>
 
                                     {/* Closing Note */}
