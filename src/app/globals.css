@@ -87,3 +87,7 @@ section {
 .swiper-button-prev:hover, .swiper-rtl .swiper-button-next:hover{
   background-color: rgb(200 71 54) !important;
 }
+
+.slick-dots li.slick-active button:before {
+  color: #c84736 !important;
+}

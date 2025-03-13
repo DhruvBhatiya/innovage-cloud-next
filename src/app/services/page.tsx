@@ -114,7 +114,7 @@ const Services = () => {
                                 </Grid>
 
                                 {section.content.services && section.content.services.length > 0 && (
-                                    <Grid item xs={12} md={6}>
+                                    <Grid item xs={12} md={7}>
                                         <Box
                                             sx={{
                                                 textAlign: "center",
@@ -158,7 +158,7 @@ const Services = () => {
                                     </Grid>
                                 )}
 
-                                <Grid item xs={12} md={6}>
+                                <Grid item xs={12} md={5}>
                                     <Box sx={{ display: "flex", justifyContent: "center" }}>
                                         <Image
                                             src={section.image}
