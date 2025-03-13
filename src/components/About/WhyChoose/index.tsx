@@ -39,6 +39,7 @@ export const WhyChoose = () => {
     return (
         <div>
             <Container maxWidth="lg" className='py-[70px]'>
+                <h2 className="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0 mb-10">Why Choose Innovage Cloud?</h2>
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={4}>
                         <Image
@@ -50,10 +51,6 @@ export const WhyChoose = () => {
                         />
                     </Grid>
                     <Grid item xs={12} md={8}>
-                        <Typography variant="h4" color="#c84736" fontWeight="bold" className='mb-8' gutterBottom>
-                            Why Choose Innovage Cloud?
-                        </Typography>
-
                         <Box sx={{ maxWidth: 800, mx: "auto" }}>
                             {expertiseData.map((item, index) => (
                                 <Accordion

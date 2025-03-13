@@ -38,10 +38,8 @@ const VisionMission = () => {
                 {/* Vision Section */}
                 <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
                     <Grid item xs={12} md={12}>
+                        <h2 className="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0 mb-10">Our Vision</h2>
 
-                        <Typography variant="h4" color="#c84736" fontWeight="bold" gutterBottom>
-                            Our Vision
-                        </Typography>
                         <Typography variant="body1" paragraph className="mb-0">
                             Our vision is to become a global leader in driving digital transformation through Cloud & AI technologies —
                             helping businesses innovate, operate efficiently, and scale sustainably.
@@ -182,9 +180,7 @@ const VisionMission = () => {
                 {/* Mission Section */}
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={8}>
-                        <Typography variant="h4" color="#c84736" fontWeight="bold" gutterBottom>
-                            Our Mission
-                        </Typography>
+                        <h2 className="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0 mb-10">Our Mission</h2>
                         <Typography variant="body1" paragraph>
                             To empower businesses with innovative Cloud & AI solutions, delivering high-quality services that build trust and
                             drive sustainable growth.
