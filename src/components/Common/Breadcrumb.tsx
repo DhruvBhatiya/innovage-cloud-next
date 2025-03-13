@@ -27,7 +27,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   {pageDescription}
                 </p>
 
-                <ul className="flex items-center justify-center gap-[10px]">
+                {/* <ul className="flex items-center justify-center gap-[10px]">
                   <li>
                     <Link
                       href="/"
@@ -42,7 +42,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
                       {pageName}
                     </p>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>

@@ -4,9 +4,9 @@ import Link from "next/link";
 import { HeaderItem } from "../../../../types/menu";
 import { usePathname } from "next/navigation";
 
-const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
+const HeaderLink: React.FC<{ item: HeaderItem; sticky: any }> = ({ item, sticky }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const path = usePathname(); // Get the current path from Next.js router
+  const path = usePathname();
   const [isActive, setIsActive] = useState(false);
 
   // Check if the current path matches the link or any submenu link
@@ -49,27 +49,34 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseEnter={() => setSubmenuOpen(true)}
       onMouseLeave={() => setSubmenuOpen(false)}
     >
-      <button
-        onClick={toggleSubmenu}
-        onKeyDown={handleKeyDown}
-        className={`text-lg flex items-center hover:text-black capitalize relative ${
-          isActive
-            ? "text-black after:absolute after:w-8 after:h-1 after:bg-primary after:rounded-full after:-bottom-1"
-            : "text-gray-500"
-        }`}
-        aria-haspopup={item.submenu ? "true" : undefined}
-        aria-expanded={submenuOpen}
-      >
-        {item.label}
-        {item.submenu && (
+      {item.submenu ? (
+        <Link
+          href={item.href}
+          onClick={toggleSubmenu}
+          onKeyDown={handleKeyDown}
+          // className={`text-lg flex items-center hover:text-black capitalize relative 
+          //    ${isActive
+          //     ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+          //     : "text-gray-500"
+          //   }`}
+          className={`text-lg flex items-center  ${sticky ? 'hover:font-medium' : 'hover:text-black'} capitalize relative 
+             ${sticky ? isActive
+              ? "text-white after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+              : "text-[#ededed]"
+              :
+              isActive
+                ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+                : "text-gray-500"}`}
+          aria-haspopup="true"
+          aria-expanded={submenuOpen}
+        >
+          {item.label}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1.5em"
             height="1.5em"
             viewBox="0 0 24 24"
-            className={`transition-transform ${
-              submenuOpen ? "rotate-180" : ""
-            }`}
+            className={`transition-transform ${submenuOpen ? "rotate-180" : ""}`}
           >
             <path
               fill="none"
@@ -80,8 +87,30 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
               d="m7 10l5 5l5-5"
             />
           </svg>
-        )}
-      </button>
+        </Link>
+      ) : (
+        <Link
+          href={item.href}
+          prefetch={true}
+          // className={`relative text-lg flex items-center hover:text-black capitalize ${
+          //   isActive
+          //     ? "text-black after:absolute after:left-0 after:bottom-0 after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:transition-all after:duration-300"
+          //     : "text-gray-500"
+          // }`}
+
+          className={`text-lg flex items-center  ${sticky ? 'hover:font-medium' : 'hover:text-black'} capitalize relative 
+        ${sticky ? isActive
+              ? "text-white after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+              : "text-[#ededed]"
+              :
+              isActive
+                ? "text-black after:absolute after:w-8 after:h-1 after:bg-[#c84736] after:rounded-full after:-bottom-1"
+                : "text-gray-500"}`}
+        >
+          {item.label}
+        </Link>
+
+      )}
 
       {submenuOpen && item.submenu && (
         <div
@@ -94,12 +123,12 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
             return (
               <Link
                 key={index}
+                prefetch={true}
                 href={subItem.href}
-                className={`block px-4 py-2 ${
-                  isSubItemActive
-                    ? "bg-primary text-white"
-                    : "text-black dark:text-white hover:bg-primary/80"
-                }`}
+                className={`block px-4 py-2 ${isSubItemActive
+                  ? "bg-primary text-white"
+                  : "text-black dark:text-white hover:bg-[#c84736] hover:text-white"
+                  }`}
               >
                 {subItem.label}
               </Link>

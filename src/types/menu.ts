@@ -3,8 +3,18 @@ export type SubmenuItem = {
     href: string;
   };    
   
+  // export type HeaderItem = {
+  //   label: string;
+  //   href: string;
+  //   submenu?: SubmenuItem[];
+  // };
+
+
   export type HeaderItem = {
     label: string;
     href: string;
-    submenu?: SubmenuItem[];
+    submenu?: HeaderItem[]; // Existing submenu property
+    moresubmenu?: HeaderItem[]; // New nested submenu property
   };
+  
+  

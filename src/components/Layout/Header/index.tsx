@@ -76,7 +76,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 z-40 w-full  transition-all duration-300 11bg-[#ffffffe8] ${sticky ? " shadow-lg py-0 bg-[#000000c2] !text-white" : "bg-[#ffffffe8] shadow-none py-2"
+        className={`fixed top-0 z-40 w-full  transition-all duration-300 11bg-[#ffffffe8] ${sticky ? " shadow-lg py-0 bg-[#000000c2] !text-white" : "bg-[#ffffffe8] shadow-none py-0"
           }`}
       >
 
@@ -86,9 +86,11 @@ const Header: React.FC = () => {
               <Link href="/">
                 <Image
                   src="/img/logo/logo-text.svg"
-                  alt="Company Logo"
-                  width={180}
-                  height={100}
+                  alt="logo"
+                  width={160}
+                  height={50}
+                  style={{ width: "auto", height: "auto" }}
+                  quality={100}
                 />
               </Link>
               :

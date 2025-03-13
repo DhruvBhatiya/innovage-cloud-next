@@ -18,40 +18,90 @@ import { HeaderItem } from "@/types/menu";
 export const headerData: HeaderItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+
   {
     label: "Services",
     href: "/services",
     submenu: [
       {
-        label: "Seamless Integrations & Custom API Development",
-        href: "/services/#seamless-integrations-and-api-development",
+        label: "Transformative IT Solutions",
+        href: "/services/#transformative-it-solutions",
+        moresubmenu: [
+          {
+            label: "Seamless Integrations & Custom API Development",
+            href: "/services/#seamless-integrations-and-api-development",
+          },
+          {
+            label: "Bespoke Application Development",
+            href: "/services/#bespoke-application-development",
+          },
+          {
+            label: "Oracle Fusion Cloud Implementation",
+            href: "/services/#oracle-fusion-cloud-implementation",
+          },
+          {
+            label: "Off-shore Technical Support & Resource Augmentation",
+            href: "/services/#off-shore-technical-support-and-resource-augmentation",
+          },
+        ],
       },
       {
-        label: "Bespoke Application Development",
-        href: "/services/#bespoke-application-development",
-      },
-      {
-        label: "Oracle Fusion Cloud Implementation",
-        href: "/services/#oracle-fusion-cloud-implementation",
-      },
-      {
-        label: "Off-shore Technical Support & Resource Augmentation",
-        href: "/services/#off-shore-technical-support-and-resource-augmentation",
-      },
-      {
-        label: "AI & Automation",
-        href: "/services/#ai-and-automation",
-      },
-      {
-        label: "Cloud Migrations & Management",
-        href: "/services/#cloud-migrations-and-management",
-      },
-      {
-        label: "Data Analytics & Reporting",
-        href: "/services/#data-analytics-and-reporting",
+        label: "Cutting-Edge Advanced Solutions",
+        href: "/services/#cutting-edge-advanced-solutions",
+        moresubmenu: [
+          {
+            label: "AI & Automation",
+            href: "/services/#ai-and-automation",
+          },
+          {
+            label: "Cloud Migrations & Management",
+            href: "/services/#cloud-migrations-and-management",
+          },
+          {
+            label: "Data Analytics & Reporting",
+            href: "/services/#data-analytics-and-reporting",
+          },
+        ],
       },
     ],
   },
+  
+
+  
+  // {
+  //   label: "Services",
+  //   href: "/services",
+  //   submenu: [
+  //     {
+  //       label: "Seamless Integrations & Custom API Development",
+  //       href: "/services/#seamless-integrations-and-api-development",
+  //     },
+  //     {
+  //       label: "Bespoke Application Development",
+  //       href: "/services/#bespoke-application-development",
+  //     },
+  //     {
+  //       label: "Oracle Fusion Cloud Implementation",
+  //       href: "/services/#oracle-fusion-cloud-implementation",
+  //     },
+  //     {
+  //       label: "Off-shore Technical Support & Resource Augmentation",
+  //       href: "/services/#off-shore-technical-support-and-resource-augmentation",
+  //     },
+  //     {
+  //       label: "AI & Automation",
+  //       href: "/services/#ai-and-automation",
+  //     },
+  //     {
+  //       label: "Cloud Migrations & Management",
+  //       href: "/services/#cloud-migrations-and-management",
+  //     },
+  //     {
+  //       label: "Data Analytics & Reporting",
+  //       href: "/services/#data-analytics-and-reporting",
+  //     },
+  //   ],
+  // },
 
   {
     label: "Career",

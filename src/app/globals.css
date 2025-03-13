@@ -50,7 +50,7 @@ section {
 }
 
 .card-expe:hover .card-icon {
-  background-color: rgb(200 71 54) !important;
+  background-color: #000 !important;
 }
 
 .text-midnight_text {
@@ -71,4 +71,19 @@ section {
 
 .MuiButton-root:hover {
   opacity: 0.9;
+}
+
+.MuiAccordionSummary-content.Mui-expanded{
+  margin: 8px 0 !important;
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after, .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+  color: #fff;
+}
+
+.swiper-button-prev, .swiper-rtl .swiper-button-next{
+  background-color: rgb(4, 4, 4) !important;
+}
+.swiper-button-prev:hover, .swiper-rtl .swiper-button-next:hover{
+  background-color: rgb(200 71 54) !important;
 }

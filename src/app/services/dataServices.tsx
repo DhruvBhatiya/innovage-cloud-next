@@ -79,6 +79,7 @@ export const ServiceData = [
         title: "Oracle Fusion Cloud Implementation",
         content: {
             description: "Unlock the full potential of Oracle Fusion Cloud with Innovage Cloud. Our expert implementation services ensure a smooth transition to the cloud, aligning Oracle’s powerful ERP, HCM, and SCM solutions with your business goals — driving innovation, efficiency, and growth.",
+            services: []
         },
         image: "/img/services/Oracle_Fusion_Cloud_Implementation.png",
         id: "oracle-fusion-cloud-implementation",
