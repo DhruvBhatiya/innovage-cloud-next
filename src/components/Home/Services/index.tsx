@@ -6,13 +6,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { servicesData } from "@/app/api/data";
+import { ServiceData } from "@/app/services/dataServices";
 
 const Services = () => {
 
     const settings = {
         dots: true,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         arrows: true,
         autoplay: false,
@@ -64,9 +65,10 @@ const Services = () => {
                         Explore Services&nbsp;&gt;&nbsp;
                     </Link>
                 </div>
+                </div>
 
                 <Slider {...settings}>
-                    {servicesData.map((items, i) => (
+                    {ServiceData.map((items, i) => (
                         <div key={i} className="!h-full">
                             <div
                                 className="bg-white m-3 px-3 pt-3 pb-3 rounded-sm !h-full shadow-md group transform transition-transform duration-300 ease-in-out hover:scale-110"
@@ -78,7 +80,7 @@ const Services = () => {
                                 {/* Image Wrapper */}
                                 <div className="relative h-[300px] flex align-middle bg-[#c847360f] overflow-hidden rounded-lg">
                                     <Image
-                                        src={items.imgSrc}
+                                        src={items.image}
                                         alt="service-image"
                                         width={400}
                                         height={300}
@@ -88,19 +90,19 @@ const Services = () => {
                                 </div>
 
                                 {/* Content */}
-                                <div className="px-3 pt-6 min-h-[90px] text-center">
+                                <div className=" pt-4 min-h-[70px] text-center ">
                                     <Link
-                                        href={items.href}
-                                        className="text-lg font-bold text-black max-w-75% inline-block hover:text-[#c84736] "
+                                        href={`services#${items.id}`}
+                                        className="text-base font-bold text-black max-w-75% inline-block hover:text-[#c84736]"
+                                        style={{"overflow":"hidden","display":"-webkit-box","WebkitLineClamp":"2","WebkitBoxOrient":"vertical", margin: '0 auto'}}
                                     >
-                                        {items.heading}
+                                        {items.title}
                                     </Link>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </Slider>
-            </div>
 
             {/* Arrow Styling for Better Visibility Below Slider */}
             <style jsx>{`

@@ -116,7 +116,7 @@ const Header: React.FC = () => {
                 <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
                   <div
                     ref={signInRef}
-                    className="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg px-8 pt-14 pb-8 text-center bg-white"
+                    className="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg 11px-8 11pt-14 11pb-8 text-center bg-white"
                   >
                     <button
                       onClick={() => setIsQuoteInOpen(false)}
@@ -125,7 +125,7 @@ const Header: React.FC = () => {
                     >
                       <Icon
                         icon="tabler:currency-xrp"
-                        className="text-black hover:text-primary text-24 inline-block me-2"
+                        className="text-white hover:text-primary text-24 inline-block me-2"
                       />
                     </button>
                     <GetAQuote />
@@ -193,11 +193,11 @@ const Header: React.FC = () => {
                 aria-label="Close menu Modal"
               ><CloseIcon /></button>
             </div>
-            <nav className="flex flex-col items-start p-4">
+            <nav className="flex flex-col items-start p-4 !text-black">
               {headerData.map((item, index) => (
                 <MobileHeaderLink key={index} item={item} />
               ))}
-              <div className="mt-4 flex flex-col space-y-4 w-full">
+              {/* <div className="mt-4 flex flex-col space-y-4 w-full">
                 <Link
                   href="#"
                   className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
@@ -218,7 +218,7 @@ const Header: React.FC = () => {
                 >
                   Sign Up
                 </Link>
-              </div>
+              </div> */}
             </nav>
           </div>
         </div>

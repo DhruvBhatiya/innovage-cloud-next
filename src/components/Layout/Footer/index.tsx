@@ -9,10 +9,10 @@ const footer = () => {
     <footer className="bg-deepSlate pt-[70px] pb-10" style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }} >
       <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md px-4">
         <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
-          <div className='col-span-4 md:col-span-12 lg:col-span-4'>
+          <div className='col-span-4 md:col-span-12 lg:col-span-5'>
             <Logo />
             <div className=' my-5'>
-              <p>We provide Consulting, Implementation and Managed Services for Oracle Cloud and specialize in Oracle PaaS services.
+              <p>At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do. We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses transform, grow, and thrive in a digital-first world.
               </p>
             </div>
 
@@ -46,8 +46,8 @@ const footer = () => {
               ))}
             </ul>
           </div>
-          <div className="col-span-2">
-            <h3 className="mb-4 text-2xl font-medium">Other</h3>
+          {/* <div className="col-span-2">
+            <h3 className="mb-4 text-2xl font-medium">Services</h3>
             <ul>
               <li className="mb-2 text-black/50 hover:text-primary w-fit">
                 <Link href="#">
@@ -75,7 +75,7 @@ const footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
           <div className='col-span-4 md:col-span-4 lg:col-span-4'>
             <div className="flex items-center gap-2">
               <Icon

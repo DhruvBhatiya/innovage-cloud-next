@@ -32,7 +32,7 @@ const VisionMission = () => {
                 <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
                     <Grid item xs={12} md={4}>
                         <Image
-                            src="/images/vision.jpg"
+                            src="/img/about/vision.jpg"
                             alt="Our Vision"
                             width={500}
                             height={350}
@@ -98,7 +98,7 @@ const VisionMission = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Image
-                            src="/images/mission.jpg"
+                            src="/img/about/mission.jpg"
                             alt="Our Mission"
                             width={500}
                             height={350}
