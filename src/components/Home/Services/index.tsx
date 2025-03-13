@@ -78,7 +78,7 @@ const Services = () => {
                                 }}
                             >
                                 {/* Image Wrapper */}
-                                <div className="relative h-[300px] flex align-middle bg-[#c847360f] overflow-hidden rounded-lg">
+                                <div className="relative h-[230px] flex align-middle bg-[#c847360f] overflow-hidden rounded-lg">
                                     <Image
                                         src={items.image}
                                         alt="service-image"

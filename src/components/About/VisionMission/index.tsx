@@ -3,8 +3,11 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { Box, Container, Grid, List, ListItem, ListItemIcon, ListItemText, Typography } from "@mui/material";
 import Image from "next/image";
 
-
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
+import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 const visionPoints = [
     "Innovation drives growth — through AI-powered automation, data-driven insights, and modern cloud infrastructures.",
@@ -23,14 +26,29 @@ const commitmentPoints = [
 
 const VisionMission = () => {
 
+    const [expanded, setExpanded] = useState<string | false>("panel0"); // Open first accordion by default
 
+    const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
+        setExpanded(isExpanded ? panel : false);
+    };
 
     return (
         <section className="11bg-cover 11bg-center-top" style={{ backgroundImage: "url('/img/bg/about-bg-02.jpg')" }}>
             <Container maxWidth="lg" >
                 {/* Vision Section */}
                 <Grid container spacing={4} alignItems="center" sx={{ mb: 6 }}>
-                    <Grid item xs={12} md={4}>
+                    <Grid item xs={12} md={12}>
+
+                        <Typography variant="h4" color="#c84736" fontWeight="bold" gutterBottom>
+                            Our Vision
+                        </Typography>
+                        <Typography variant="body1" paragraph className="mb-0">
+                            Our vision is to become a global leader in driving digital transformation through Cloud & AI technologies —
+                            helping businesses innovate, operate efficiently, and scale sustainably.
+                        </Typography>
+
+                    </Grid>
+                    <Grid item xs={12} md={4} className="!pt-0">
                         <Image
                             src="/img/about/vision.jpg"
                             alt="Our Vision"
@@ -40,14 +58,94 @@ const VisionMission = () => {
                         />
                     </Grid>
                     <Grid item xs={12} md={8}>
-                        <Typography variant="h4" color="#c84736" fontWeight="bold" gutterBottom>
-                            Our Vision
-                        </Typography>
-                        <Typography variant="body1" paragraph>
-                            Our vision is to become a global leader in driving digital transformation through Cloud & AI technologies —
-                            helping businesses innovate, operate efficiently, and scale sustainably.
-                        </Typography>
 
+                       <Box sx={{ maxWidth: 800, mx: "auto", }}>
+                            {/* Vision Accordion */}
+                            <Accordion
+                                expanded={expanded === "panel0"}
+                                onChange={handleChange("panel0")}
+                                sx={{
+                                    boxShadow: 3,
+                                    "&:before": { display: "none" },
+                                    border: "1px solid #e0e0e0",
+                                    borderRadius: "8px",
+                                    mb: 1
+                                }}
+                            >
+                                <AccordionSummary
+                                    expandIcon={
+                                        expanded === "panel0"
+                                            ? <RemoveIcon sx={{ color: "#fff" }} />
+                                            : <AddIcon sx={{ color: "#c84736" }} />
+                                    }
+                                    sx={{
+                                        backgroundColor: expanded === "panel0" ? "#c84736" : "#f5f5f5",
+                                        color: expanded === "panel0" ? "#fff" : "#000",
+                                        borderRadius: "8px 8px 0 0"
+                                    }}
+                                >
+                                    <Typography variant="h6" fontWeight="bold">
+                                        We envision a future where:
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <List>
+                                        {visionPoints.map((point, index) => (
+                                            <ListItem key={index}>
+                                                <ListItemIcon>
+                                                    <FiberManualRecordIcon fontSize="small" />
+                                                </ListItemIcon>
+                                                <ListItemText primary={point} />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </AccordionDetails>
+                            </Accordion>
+
+                            {/* Commitment Accordion */}
+                            <Accordion
+                                expanded={expanded === "panel1"}
+                                onChange={handleChange("panel1")}
+                                sx={{
+                                    boxShadow: 3,
+                                    "&:before": { display: "none" },
+                                    border: "1px solid #e0e0e0",
+                                    borderRadius: "8px",
+                                    mb: 1
+                                }}
+                            >
+                                <AccordionSummary
+                                    expandIcon={
+                                        expanded === "panel1"
+                                            ? <RemoveIcon sx={{ color: "#fff" }} />
+                                            : <AddIcon sx={{ color: "#c84736" }} />
+                                    }
+                                    sx={{
+                                        backgroundColor: expanded === "panel1" ? "#c84736" : "#f5f5f5",
+                                        color: expanded === "panel1" ? "#fff" : "#000",
+                                        borderRadius: "8px 8px 0 0"
+                                    }}
+                                >
+                                    <Typography variant="h6" fontWeight="bold">
+                                        Beyond technology, we’re committed to sustainability and social responsibility:
+                                    </Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <List>
+                                        {commitmentPoints.map((point, index) => (
+                                            <ListItem key={index}>
+                                                <ListItemIcon>
+                                                    <FiberManualRecordIcon fontSize="small" />
+                                                </ListItemIcon>
+                                                <ListItemText primary={point} />
+                                            </ListItem>
+                                        ))}
+                                    </List>
+                                </AccordionDetails>
+                            </Accordion>
+                        </Box>
+
+                        {/* 
                         <Box>
                             <Typography variant="h5" fontWeight="bold" sx={{ mb: 2 }}>
                                 We envision a future where:
@@ -76,7 +174,7 @@ const VisionMission = () => {
                                     </ListItem>
                                 ))}
                             </List>
-                        </Box>
+                        </Box> */}
 
                     </Grid>
                 </Grid>

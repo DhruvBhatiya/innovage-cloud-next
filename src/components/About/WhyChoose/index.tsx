@@ -71,7 +71,7 @@ export const WhyChoose = () => {
                                     <AccordionSummary
                                         expandIcon={
                                             expanded === `panel${index}` ? (
-                                                <RemoveIcon sx={{ color: "#c84736" }} />
+                                                <RemoveIcon sx={{ color: "#fff" }} />
                                             ) : (
                                                 <AddIcon sx={{ color: "#c84736" }} />
                                             )

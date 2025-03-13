@@ -10,13 +10,7 @@ const values = [
         title: "Innovation",
         description:
             "We push boundaries, embracing emerging technologies like AI, automation, and Oracle Cloud solutions to craft forward-thinking strategies. Our team thrives on creativity — developing custom applications, intelligent integrations, and next-gen cloud solutions tailored to your business needs.",
-        icon: <LightbulbIcon fontSize="large" />,
-    },
-    {
-        title: "Quality",
-        description:
-            "Excellence is non-negotiable. From Oracle Fusion implementations to bespoke software development, we follow industry best practices, rigorous testing, and continuous optimization — ensuring that every solution we deliver meets the highest standards.",
-        icon: <VerifiedIcon fontSize="large" />,
+        icon: <LightbulbIcon fontSize="large" className="" />,
     },
     {
         title: "Trust",
@@ -24,6 +18,13 @@ const values = [
             "Partnerships are built on trust. We work closely with our clients, offering transparent processes, clear communication, and reliable support. With Innovage Cloud, you can count on consistent service, secure solutions, and a team that's invested in your success.",
         icon: <HandshakeIcon fontSize="large" />,
     },
+    {
+        title: "Quality",
+        description:
+            "Excellence is non-negotiable. From Oracle Fusion implementations to bespoke software development, we follow industry best practices, rigorous testing, and continuous optimization — ensuring that every solution we deliver meets the highest standards.",
+        icon: <VerifiedIcon fontSize="large" />,
+    },
+   
 ];
 
 const CoreValues = () => {
@@ -31,7 +32,8 @@ const CoreValues = () => {
         <section className="11bg-cover 11bg-center-top" style={{ backgroundImage: "url('/img/bg/about-bg-02.jpg')" }}>
             <Container maxWidth="lg" >
 
-            <h2 className="text-dark-gray text-5xl font-normal mb-8 text-primary ">Our Core Values</h2>
+            <h2 className="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0 mb-10">Our Core Values</h2>
+         
                 <Grid container spacing={4}>
                     {values.map((value, index) => (
                         <Grid item xs={12} md={4} key={index}>
@@ -55,6 +57,7 @@ const CoreValues = () => {
                                         alignItems: "center",
                                         mb: 2,
                                         color: "#c84736",
+                                       
                                     }}
                                 >
                                     {value.icon}

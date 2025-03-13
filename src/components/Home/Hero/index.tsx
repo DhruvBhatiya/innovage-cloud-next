@@ -24,7 +24,7 @@ const Hero = () => {
                                 />
                                 <p className='text-success text-sm font-semibold text-center lg:text-start'>Get 30% off on first enroll</p>
                             </div> */}
-                            <h1 className='text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0'>Who We Are</h1>
+                            <h1 className='text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0'>Welcome to <br />Innovage Cloud</h1>
                             <h3 className='text-black/70 text-lg pt-5 lg:pt-0'>We provide Consulting, Implementation and Managed Services for Oracle Cloud and specialize in Oracle PaaS services.        </h3>
                             {/* <div className="relative rounded-full pt-5 lg:pt-0">
                                 <input type="Email address" name="q" className="py-6 lg:py-8 pl-8 pr-20 text-lg w-full text-black rounded-full focus:outline-none shadow-input-shadow" placeholder="search courses..." autoComplete="off" />

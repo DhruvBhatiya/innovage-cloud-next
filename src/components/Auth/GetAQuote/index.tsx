@@ -34,7 +34,7 @@ const GetAQuote = () => {
           </div>
 
           <button type="submit" className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90">
-            Send Message
+          Schedule a Meeting
           </button>
         </form>
 

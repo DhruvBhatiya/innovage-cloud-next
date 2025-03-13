@@ -31,7 +31,7 @@ export default function About() {
                         </div>
                         <div className="w-full lg:w-1/2 text-center lg:text-left ">
                             <div className='mb-8'>
-                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Quality | Trust</span>
+                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Trust | Quality </span>
                                 <h2 className="text-2xl font-normal mb-3 text-primary ">About Innovage Cloud</h2>
                                 <p className="w-4/5 mx-auto lg:mx-0 text-justify">At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do. We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses transform, grow, and thrive in a digital-first world.</p>
                             </div>
@@ -47,34 +47,10 @@ export default function About() {
                 </div>
             </section>
 
-            {/* <StatsSection /> */}
+            {/* Section 2 - Counter */}
+            <StatsSection />
 
-            {/* Section 2 - Statistics */}
-            <section className="11bg-center 11bg-cover pt-0 pb-[70px]" style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}>
-                <div className="container mx-auto bg-white rounded-lg shadow-lg p-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 text-center gap-4">
-                        <div>
-                            <h2 className="text-6xl mb-2 font-medium text-primary">8M+</h2>
-                            <p className='text-lg text-gray-400'>Trusted user</p>
-                        </div>
-                        <div>
-                            <h2 className="text-6xl mb-2 font-medium text-primary">64K</h2>
-                            <p className='text-lg text-gray-400'>Telephonic talk</p>
-                        </div>
-                        <div>
-                            <h2 className="text-6xl mb-2 font-medium text-primary">9M+</h2>
-                            <p className='text-lg text-gray-400'>Project finished</p>
-                        </div>
-                        <div>
-                            <h2 className="text-6xl mb-2 font-medium text-primary">225</h2>
-                            <p className='text-lg text-gray-400'>Award winning</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-
+        
             <CoreValues />
 
 
