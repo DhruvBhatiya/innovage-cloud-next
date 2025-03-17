@@ -120,7 +120,7 @@ const ContactForm = () => {
                     </motion.div>
                 </Grid>
             </Grid>
-            {/* <ScheduleMeeting /> */}
+            <ScheduleMeeting />
         </Container>
 
     );
