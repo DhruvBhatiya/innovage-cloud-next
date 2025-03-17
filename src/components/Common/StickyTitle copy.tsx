@@ -29,19 +29,24 @@ const StickyTitle = ({ title, fixedTitle }: { title: string; fixedTitle: string 
             sx={{
                 position: isFixed ? "fixed" : "relative",
                 top: isFixed ? "70px" : "auto",
-                width: "100%",
-                backgroundColor: "#fff",
+                left: 0,
+                width: isFixed ? "fit-content" : '100%',
+                // backgroundColor: "#fff",
+                // backgroundColor: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#c84736': '#fff' : '#fff',
+                backgroundColor: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#d0fa74': '#fef282' : '#fff',
                 zIndex: 20,
-                py: 2,
+                p: 1,
                 boxShadow: isFixed ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
             }}
         >
             <Typography
-                variant="h3"
-                align="center"
+                variant={isFixed ? 'h6' : 'h3'}
+                align={isFixed ? "left" : "center"}
                 sx={{
-                    color: "#c84736",
+                    color: "#000",
+                    // color: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#fff': '#c84736' : '#c84736',
                     fontWeight: "bold",
+                    fontSize: isFixed ? '14px' : '40px',
                 }}
             >
                 {isFixed ? fixedTitle : title}

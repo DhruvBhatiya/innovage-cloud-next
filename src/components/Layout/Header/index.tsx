@@ -72,6 +72,8 @@ const Header: React.FC = () => {
     }
   }, [isQuoteOpen, isSignUpOpen, navbarOpen]);
 
+  const handleCloseDrawer = () => setDrawerOpen(false);
+
 
   return (
     <>
@@ -80,7 +82,7 @@ const Header: React.FC = () => {
           }`}
       >
 
-        <div className="lg:py-0 py-2">
+        <div className="py-0 lg:py-0">
           <div className="container mx-auto lg:max-w-screen-xl md:max-w-screen-md flex items-center justify-between px-4">
             {sticky ?
               <Link href="/">
@@ -110,7 +112,7 @@ const Header: React.FC = () => {
                   setIsQuoteInOpen(true);
                 }}
               >
-                Get a quote
+                Get a Quote
               </Link>
               {isQuoteOpen && (
                 <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
@@ -195,10 +197,11 @@ const Header: React.FC = () => {
             </div>
             <nav className="flex flex-col items-start p-4 !text-black">
               {headerData.map((item, index) => (
-                <MobileHeaderLink key={index} item={item} />
+                <MobileHeaderLink item={item} closeDrawer={handleCloseDrawer} />
+
               ))}
-              {/* <div className="mt-4 flex flex-col space-y-4 w-full">
-                <Link
+              <div className="mt-4 flex flex-col space-y-4 w-full">
+                {/* <Link
                   href="#"
                   className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
                   onClick={() => {
@@ -207,18 +210,18 @@ const Header: React.FC = () => {
                   }}
                 >
                   Sign In
-                </Link>
+                </Link> */}
                 <Link
                   href="#"
                   className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                   onClick={() => {
-                    setIsSignUpOpen(true);
+                    setIsQuoteInOpen(true);
                     setNavbarOpen(false);
                   }}
                 >
-                  Sign Up
+                  Get A Quote
                 </Link>
-              </div> */}
+              </div>
             </nav>
           </div>
         </div>
@@ -228,3 +231,7 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+function setDrawerOpen(arg0: boolean) {
+  throw new Error("Function not implemented.");
+}
+

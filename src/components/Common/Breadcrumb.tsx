@@ -10,7 +10,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
       style={{ backgroundImage: `url('/images/bg/hero-bg.jpg')`, backgroundRepeat: 'no-repeat' }}
     >
 
-      <div className='pb-[60px] pt-[80px] md:pt-[130px] lg:pt-[150px]' 
+      <div className='pb-[60px]  pt-[140px] md:pt-[130px] lg:pt-[150px]' 
       // style={{ backgroundImage: `url('/images/bg/about-bottom-bg.webp')`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center bottom', zIndex: 1, backgroundSize: '100%' }}
       style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}
       >

@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { Grid, Card, CardContent, Typography, Container, Box, Link } from "@mui/material";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import CloudQueueIcon from "@mui/icons-material/CloudQueue"; // For OIC
-import BuildIcon from "@mui/icons-material/Build"; // For VBCS
-import SettingsIcon from "@mui/icons-material/Settings"; // For PCS
-import CodeIcon from "@mui/icons-material/Code"; // For Apex Development
-import TerminalIcon from "@mui/icons-material/Terminal"; // For Java Development
-import StorageIcon from "@mui/icons-material/Storage"; // For Database
+import { Grid, Card, CardContent, Typography, Container, Box } from "@mui/material";
+import { motion } from "framer-motion"; // Import Framer Motion
+import CloudQueueIcon from "@mui/icons-material/CloudQueue";
+import BuildIcon from "@mui/icons-material/Build";
+import SettingsIcon from "@mui/icons-material/Settings";
+import CodeIcon from "@mui/icons-material/Code";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import StorageIcon from "@mui/icons-material/Storage";
 
 // Expertise items with labels, links, and icons
 const expertiseItems = [
@@ -19,17 +19,31 @@ const expertiseItems = [
   { label: "Database", href: "/expertise/#database", icon: <StorageIcon /> },
 ];
 
+// Animation Variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+};
+
 const Expertise = () => {
   return (
     <div className="py-[70px] mb-16">
       <section
         className="bg-deepSlate !py-0"
-        style={{ height: "calc(100% - 200px)" }} // Dynamic height minus 200px
+        style={{ height: "calc(100% - 200px)" }}
         id="mentor"
       >
         <Container maxWidth="lg" sx={{ mt: 4 }} className="!px-0">
           <Grid container spacing={4}>
-            {/* Left Side - Title & Content (Vertically Centered) */}
+            {/* Left Side - Title & Content */}
             <Grid
               item
               xs={12}
@@ -39,7 +53,7 @@ const Expertise = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                minHeight: "calc(100% - 100px)", // Adjust height dynamically
+                minHeight: "calc(100% - 100px)",
               }}
             >
               <h2 className="text-midnight_text text-4xl lg:text-5xl font-semibold mb-8">
@@ -50,92 +64,79 @@ const Expertise = () => {
               </Typography>
             </Grid>
 
-            {/* Right Side - Cards */}
+            {/* Right Side - Cards with Animation */}
             <Grid item xs={12} md={6} lg={8}>
-              <Grid container spacing={3} className="!-mt-20 relative -bottom-[50px]">
-                {expertiseItems.map((item, index) => (
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    key={index}
-                    // sx={{
-                    //   mt: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0, // Move some cards up for a staggered effect
-                    // }}
-                    sx={{
-                      mt: {
-                        xs: 0, // No margin adjustment on mobile
-                        md: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0, // Stagger effect only on medium+ screens
-                      },
-                    }}
-                  >
-                    <Card
-                      className="card-expe"
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                <Grid container spacing={3} className="!-mt-20 relative -bottom-[50px]">
+                  {expertiseItems.map((item, index) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={4}
+                      key={index}
                       sx={{
-                        minHeight: 160,
-                        textAlign: "left",
-                        p: 1,
-                        boxShadow: 1, // Small shadow
-                        transition: "all 0.3s ease-in-out",
-                        "&:hover": {
-                          boxShadow: 6, // Larger shadow on hover
-                          transform: "scale(1.02)", // Slight scale effect
+                        mt: {
+                          xs: 0,
+                          md: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0,
                         },
                       }}
                     >
-                      <CardContent>
-                        {/* Icon inside a box with hover effect */}
-                        <Box
-                          className="card-icon mb-2"
+                      <motion.div variants={itemVariants}>
+                        <Card
+                          className="card-expe"
                           sx={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            width: 50,
-                            height: 50,
-                            borderRadius: "50%",
-                            backgroundColor: "#c84736", // Default background black
-                            transition: "background 0.3s ease-in-out",
-                            color: '#fff',
+                            minHeight: 160,
+                            textAlign: "left",
+                            p: 1,
+                            boxShadow: 1,
+                            transition: "all 0.3s ease-in-out",
                             "&:hover": {
-                              backgroundColor: "#000", // Change background to red on hover
+                              boxShadow: 6,
+                              transform: "scale(1.05)", // Enhanced hover effect
                             },
                           }}
                         >
-                          {item.icon}
-                        </Box>
+                          <CardContent>
+                            <Box
+                              className="card-icon mb-2"
+                              sx={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                width: 50,
+                                height: 50,
+                                borderRadius: "50%",
+                                backgroundColor: "#c84736",
+                                transition: "background 0.3s ease-in-out",
+                                color: "#fff",
+                                "&:hover": {
+                                  backgroundColor: "#000",
+                                },
+                              }}
+                            >
+                              {item.icon}
+                            </Box>
 
-                        {/* Card Title */}
-                        <Typography variant="h6" sx={{ mt: 1, mb: 1 }}>
-                          {item.label}
-                        </Typography>
+                            <Typography variant="h6" sx={{ mt: 1, mb: 1 }}>
+                              {item.label}
+                            </Typography>
 
-                        {/* Card Description */}
-                        <Typography sx={{ mb: 1.5 }} variant="body2">
-                          We specialize in {item.label}, offering tailored solutions to optimize business operations.
-                        </Typography>
-
-                        {/* View More Link */}
-                        {/* <Link
-                          href={item.href}
-                          underline="hover"
-                          sx={{
-                            display: "inline-block",
-                            mt: 1,
-                            fontWeight: "medium",
-                            color: "#c84736",
-                            transition: "color 0.3s ease-in-out",
-                            "&:hover": { color: "#c84736" }, // Change to red on hover
-                          }}
-                        >
-                          View More
-                        </Link> */}
-                      </CardContent>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
+                            <Typography sx={{ mb: 1.5 }} variant="body2">
+                              We specialize in {item.label}, offering tailored solutions to optimize business operations.
+                            </Typography>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    </Grid>
+                  ))}
+                </Grid>
+              </motion.div>
             </Grid>
           </Grid>
         </Container>

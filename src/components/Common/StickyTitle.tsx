@@ -31,9 +31,11 @@ const StickyTitle = ({ title, fixedTitle }: { title: string; fixedTitle: string 
                 top: isFixed ? "70px" : "auto",
                 left: 0,
                 width: isFixed ? "fit-content" : '100%',
-                // backgroundColor: "#fff",
-                // backgroundColor: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#c84736': '#fff' : '#fff',
-                backgroundColor: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#d0fa74': '#fef282' : '#fff',
+                backgroundColor: isFixed
+                    ? fixedTitle === "Cutting-Edge Advanced Solutions"
+                        ? '#d0fa74'
+                        : '#fef282'
+                    : '#fff',
                 zIndex: 20,
                 p: 1,
                 boxShadow: isFixed ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
@@ -44,9 +46,10 @@ const StickyTitle = ({ title, fixedTitle }: { title: string; fixedTitle: string 
                 align={isFixed ? "left" : "center"}
                 sx={{
                     color: "#000",
-                    // color: isFixed ? fixedTitle == "Cutting-Edge Advanced Solutions" ? '#fff': '#c84736' : '#c84736',
                     fontWeight: "bold",
-                    fontSize: isFixed ? '14px' : '40px',
+                    fontSize: isFixed
+                        ? '14px'
+                        : { xs: '24px', sm: '30px', md: '30px', lg: '40px' }, // Responsive font size
                 }}
             >
                 {isFixed ? fixedTitle : title}

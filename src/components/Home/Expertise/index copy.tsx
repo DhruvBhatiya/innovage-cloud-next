@@ -60,8 +60,14 @@ const Expertise = () => {
                     sm={6}
                     md={4}
                     key={index}
+                    // sx={{
+                    //   mt: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0, // Move some cards up for a staggered effect
+                    // }}
                     sx={{
-                      mt: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0, // Move some cards up for a staggered effect
+                      mt: {
+                        xs: 0, // No margin adjustment on mobile
+                        md: index === 0 || index === 2 || index === 3 || index === 5 ? -10 : 0, // Stagger effect only on medium+ screens
+                      },
                     }}
                   >
                     <Card

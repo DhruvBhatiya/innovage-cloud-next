@@ -1,5 +1,8 @@
+"use client"
+
 import Image from 'next/image';
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 const Hero = () => {
 
@@ -50,12 +53,26 @@ const Hero = () => {
                                 </div>
                             </div> */}
 
-                        
 
-                    
+
+
                         </div>
                         <div className='col-span-6 flex justify-center '>
-                            <Image src="/images/banner/banner-vector.svg" alt="nothing" width={450} height={405} />
+                            <motion.div
+                                animate={{ y: [0, -20, 0] }} // Bouncy motion
+                                transition={{
+                                    duration: 3.5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            >
+                                <Image
+                                    src="/images/banner/banner-vector.svg"
+                                    alt="nothing"
+                                    width={450}
+                                    height={405}
+                                />
+                            </motion.div>
                         </div>
 
                     </div>

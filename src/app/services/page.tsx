@@ -103,7 +103,11 @@ const Services = () => {
                                                         : "flex-end",
                                         }}
                                     >
-                                        <Typography color="#c84736" variant="h4" fontWeight="bold" gutterBottom>
+                                        <Typography color="#c84736" variant="h4" fontWeight="bold"
+                                        sx={{
+                                            fontSize: {xs: '22px', sm: '24px', md: '28px', lg: '32px' }, // Responsive font size
+                                        }}
+                                        gutterBottom>
                                             {section.title}
                                         </Typography>
 
