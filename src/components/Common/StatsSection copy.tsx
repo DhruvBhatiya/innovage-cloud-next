@@ -7,7 +7,7 @@ const StatsSection = () => {
             className="bg-center bg-cover pt-0 pb-[70px]"
             style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}
         >
-            <div className="container mx-auto 11bg-white rounded-lg 11shadow-lg p-4">
+            <div className="container mx-auto bg-white rounded-lg shadow-lg p-4">
                 <div className="grid grid-cols-2 md:grid-cols-4 text-center gap-4">
                     {[
                         { value: 150, label: "Custom Extension" },
