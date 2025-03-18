@@ -7,6 +7,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import dayjs, { Dayjs } from "dayjs";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import PublicIcon from '@mui/icons-material/Public';
 import VideocamIcon from "@mui/icons-material/Videocam";
 import EventIcon from "@mui/icons-material/Event";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -62,16 +63,22 @@ const ScheduleMeeting = () => {
 
             <Box className="border-b-2 my-6">
                 <Box className="flex justify-between items-center">
-                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} px={'50px'}>
+                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} >
                         <AccessTimeIcon sx={{ color: '#c84736' }} />
                         <Typography variant="body1" color="#c84736">30 Minutes</Typography>
                     </Box>
 
-                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} px={'50px'}>
+                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} >
                         <VideocamIcon sx={{ color: '#c84736' }} />
                         <Typography variant="body1" color="#c84736">Online Meeting</Typography>
                     </Box>
+
+                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} >
+                        <PublicIcon sx={{ color: '#c84736' }} />
+                        <Typography variant="body1" color="#c84736">India Standard Time</Typography>
+                    </Box>
                 </Box>
+
                 {step === 3 && (
                     <Box display="flex" alignItems="center" gap={1} mb={3} px={'50px'}>
                         <EventIcon sx={{ color: '#c84736' }} />
