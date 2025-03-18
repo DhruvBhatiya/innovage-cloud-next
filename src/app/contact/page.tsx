@@ -27,7 +27,7 @@ const Contact = () => {
             >
                 <div
                     className="absolute bottom-0 left-0 w-full h-[250px] bg-center bg-no-repeat"
-                    style={{ backgroundImage: "url('/images/demo-seo-agency-analysis-bg.png')" }}
+                    style={{ backgroundImage: "url('/')" }}
                 ></div>
 
                 <div className="container mx-auto relative z-10">

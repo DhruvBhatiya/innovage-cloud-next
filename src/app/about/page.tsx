@@ -27,7 +27,7 @@ export default function About() {
                 <div className="container mx-auto">
                     <div className="flex flex-wrap 11items-center justify-center">
                         <div className="w-full lg:w-1/2 text-center md:mb-12">
-                            <Image src="/img/about/about.jpg" alt="SEO Analysis" width={600} height={400} />
+                            <Image src="/img/about/about.jpg" alt="" width={600} height={400} />
                         </div>
                         <div className="w-full lg:w-1/2 text-center lg:text-left ">
                             <div className='mb-8'>

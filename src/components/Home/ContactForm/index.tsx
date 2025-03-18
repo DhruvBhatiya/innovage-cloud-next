@@ -4,6 +4,7 @@ import { Container, Grid, Typography, Box } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Import Framer Motion
 import ScheduleMeeting from '@/components/Home/ScheduleMeeting';
+import ContactEmail from '@/components/ContactEmail';
 
 // Animation Variants
 const fadeInLeft = {
@@ -37,24 +38,22 @@ const ContactForm = () => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Box className=" 111111 bg-white py-6 h-full lg:h-[530px] overflow-y-auto border-l-8 border-primary">
+                    <Box className=" 111111 bg-white py-6 h-full lg:h-[530px] overflow-y-auto border-l-8 border-primary shadow-2xl">
                         <ScheduleMeeting />
                     </Box>
                 </Grid>
 
                 {/* Right Side Contact Form */}
                 <Grid item xs={12} md={6}>
-                    <motion.div
-                        variants={fadeInRight}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
+                    
                         <div className="bg-gray-900 text-white p-10 rounded-lg">
                             <h1 className="text-4xl font-semibold mb-6">
                                 Say <span className="text-[#c84736]">Hello!</span>
                             </h1>
 
+                            <ContactEmail btnText="Send Message" />
+
+{/* 
                             <motion.form
                                 variants={staggeredForm}
                                 initial="hidden"
@@ -103,10 +102,11 @@ const ContactForm = () => {
                                 >
                                     Send Message
                                 </motion.button>
-                            </motion.form>
+                            </motion.form> */}
 
                         </div>
-                    </motion.div>
+
+                
                 </Grid>
             </Grid>
         </Container>
