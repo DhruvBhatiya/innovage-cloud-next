@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Breadcrumb from "@/components/Common/Breadcrumb";
-import ContactEmail from "@/components/ContactEmail/ContactEmail";
+import ContactEmail from "@/components/ContactEmail";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },

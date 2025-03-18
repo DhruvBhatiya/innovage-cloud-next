@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Grid, Typography, Box } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion'; // Import Framer Motion
-import ScheduleMeeting from '@/components/ScheduleMeeting/ScheduleMeeting';
+import ScheduleMeeting from '@/components/Home/ScheduleMeeting';
 
 // Animation Variants
 const fadeInLeft = {
@@ -27,30 +27,19 @@ const ContactForm = () => {
             <Grid container spacing={4}>
 
                 {/* Left Side Content & Image */}
+                <Grid item xs={12} md={12}>
+                    <Typography variant="h3" className="font-bold text-primary mb-4">
+                        Get in Touch
+                    </Typography>
+                    <Typography className="text-gray-600 ">
+                        Whether you have a question or just want to say hi, our team is here to help.
+                        Fill out the form and we'll get back to you soon.
+                    </Typography>
+                </Grid>
                 <Grid item xs={12} md={6}>
-                    <motion.div
-                        variants={fadeInLeft}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <Box className="text-left">
-                            <Typography variant="h3" className="font-bold text-primary mb-4">
-                                Get in Touch
-                            </Typography>
-                            <Typography className="text-gray-600 ">
-                                Whether you have a question or just want to say hi, our team is here to help.
-                                Fill out the form and we'll get back to you soon.
-                            </Typography>
-                            <Image
-                                src="/img/home/contactus.png"
-                                alt="Contact Us Illustration"
-                                className="w-full h-auto lg:h-[410px]"
-                                width={400}
-                                height={410}
-                            />
-                        </Box>
-                    </motion.div>
+                    <Box className=" 111111 bg-white py-6 h-full lg:h-[530px] overflow-y-auto border-l-8 border-primary">
+                        <ScheduleMeeting />
+                    </Box>
                 </Grid>
 
                 {/* Right Side Contact Form */}
@@ -120,7 +109,6 @@ const ContactForm = () => {
                     </motion.div>
                 </Grid>
             </Grid>
-            <ScheduleMeeting />
         </Container>
 
     );

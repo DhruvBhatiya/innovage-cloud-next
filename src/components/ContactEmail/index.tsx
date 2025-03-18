@@ -1,12 +1,28 @@
 "use client";
 
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
+import Snackbar from '@mui/joy/Snackbar';
 
-const ContactEmail = (btnText: any) => {
+
+interface ContactEmailProps {
+    btnText: any;
+
+    selectedDate?: string;
+    selectedTime?: string;
+    setSelectedDate?: any;
+    setSelectedTime?: any;
+    setStep?: any;
+}
+
+
+const ContactEmail: React.FC<ContactEmailProps> = ({ selectedDate, selectedTime, btnText, setSelectedDate, setSelectedTime, setStep }) => {
     const form = useRef<HTMLFormElement>(null);
-    console.log("btnText", btnText)
+    // console.log("btnText", btnText)
+
+    const [open, setOpen] = React.useState(false);
+
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
@@ -27,6 +43,8 @@ const ContactEmail = (btnText: any) => {
             name: (currentForm['name'] as unknown as HTMLInputElement)?.value,
             email: (currentForm['email'] as unknown as HTMLInputElement)?.value,
             message: (currentForm['message'] as unknown as HTMLTextAreaElement)?.value,
+            date: (currentForm['date'] as unknown as HTMLTextAreaElement)?.value,
+            time: (currentForm['time'] as unknown as HTMLTextAreaElement)?.value,
         };
 
 
@@ -43,6 +61,9 @@ const ContactEmail = (btnText: any) => {
                 console.log('SUCCESS!', response.status, response.text);
                 alert("✅ Your message has been sent successfully!");
                 currentForm.reset();
+                setSelectedDate(null);
+                setSelectedTime(null);
+                setStep(1);
             })
             .catch((error) => {
                 console.error('EmailJS Error:', error);
@@ -51,17 +72,30 @@ const ContactEmail = (btnText: any) => {
     };
 
 
-
-
-
-
     return (
         <form ref={form} onSubmit={handleSubmit}>
 
             <input
                 type="hidden"
+                name="date"
+                value={selectedDate ? selectedDate : ""}           
+                placeholder={selectedDate ? selectedDate : ""}
+                className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                required
+            />
+            <input
+                type="hidden"
+                name="time"
+                value={selectedTime ? selectedTime : ""}           
+                placeholder={selectedTime ? selectedTime : ""}
+                className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                required
+            />
+
+            <input
+                type="hidden"
                 name="subject"
-                value={btnText ? btnText.btnText : "Contact Page"}           
+                value={btnText ? btnText : "Contact Page"}           
                 placeholder={btnText ? btnText.btnText : "Contact Page"}
                 className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
                 required
@@ -106,7 +140,7 @@ const ContactEmail = (btnText: any) => {
                 className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90"
                 variants={fadeInUp}
             >
-                {btnText ? btnText.btnText : "Send Message"}
+                {btnText ? btnText : "Send Message"}
             </motion.button>
         </form>
     );

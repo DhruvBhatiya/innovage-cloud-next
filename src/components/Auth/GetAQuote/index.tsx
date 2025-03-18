@@ -1,5 +1,5 @@
 "use client";
-import ContactEmail from "@/components/ContactEmail/ContactEmail";
+import ContactEmail from "@/components/ContactEmail";
 import { useRouter } from "next/navigation";
 
 const GetAQuote = () => {
