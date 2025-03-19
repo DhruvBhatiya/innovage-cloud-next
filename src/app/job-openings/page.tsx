@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Image from "next/image";
 import { FAQSection } from "@/components/Career/FAQ";
+import JobOpeningsCard from "@/components/Career/JobOpenings";
 
 const JobOpenings = () => {
     const [expanded, setExpanded] = useState<number | false>(false);
@@ -38,10 +39,14 @@ const JobOpenings = () => {
         <>
             <Breadcrumb pageName="Job Openings" />
 
-            <section className="relative bg-gradient-to-t from-gray-100 to-white pb-20"
+            <JobOpeningsCard />
+
+            <FAQSection />
+
+            {/* <section className="relative bg-gradient-to-t from-gray-100 to-white pb-20"
                 style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}
             >
-                {/* Background Images */}
+              
                 <div
                     className="absolute top-0 left-0 w-full h-full z-[-1]"
                     style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}
@@ -93,8 +98,7 @@ const JobOpenings = () => {
                 </Container>
 
              
-                <FAQSection />
-            </section>
+            </section> */}
         </>
     );
 };
