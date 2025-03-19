@@ -44,7 +44,7 @@ export const FAQSection = () => {
                 {/* Title Section */}
                 <Typography
                     variant="h3"
-                    className="text-center font-bold text-primary mb-10"
+                    className="text-4xl lg:text-5xl text-center font-bold text-primary mb-10"
                 >
                     Have Questions? We've Got Answers!
                 </Typography>
@@ -67,7 +67,7 @@ export const FAQSection = () => {
 
                             <Typography
                                 variant="h4"
-                                className="font-bold text-gray-800 mb-6"
+                                className="text-3xl lg:text-3xl font-bold text-gray-800 mb-6"
                             >
                                 Frequently Asked Questions
                             </Typography>

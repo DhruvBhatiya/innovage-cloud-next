@@ -41,7 +41,7 @@ const Expertise = () => {
         style={{ height: "calc(100% - 200px)" }}
         id="mentor"
       >
-        <Container maxWidth="lg" sx={{ mt: 4 }} className="!px-0">
+        <Container maxWidth="lg" sx={{ mt: 4 }} className="!px-3 lg:!px-0">
           <Grid container spacing={4}>
             {/* Left Side - Title & Content */}
             <Grid

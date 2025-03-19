@@ -44,7 +44,7 @@ const ScheduleMeeting = () => {
     };
 
     return (
-        <Box className="" sx={{ p: 0, maxWidth: 500, mx: "auto", textAlign: "center" }}>
+        <Box className="px-3 lg:px-0" sx={{ p: 0, maxWidth: 500, mx: "auto", textAlign: "center" }}>
 
             <Box className="mb-6">
                 <Box className="flex justify-between items-center ">

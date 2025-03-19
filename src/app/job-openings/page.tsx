@@ -56,8 +56,10 @@ const JobOpenings = () => {
                         {plans.map((plan, index) => (
                             <Grid
                                 item
+                                xs={12}
+                                sm={12}
+                                md={6}
                                 lg={4}
-                                md={8}
                                 key={plan.title}
                                 className={isClient && index === 1 ? "scale-105 transform" : ""} // Enlarge center card (only on client side)
                             >
