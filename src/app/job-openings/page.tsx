@@ -5,6 +5,7 @@ import { Add as AddIcon, Remove as RemoveIcon } from "@mui/icons-material";
 import { useState, useEffect } from "react";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Image from "next/image";
+import { FAQSection } from "@/components/Career/FAQ";
 
 const JobOpenings = () => {
     const [expanded, setExpanded] = useState<number | false>(false);
@@ -21,7 +22,7 @@ const JobOpenings = () => {
     const plans = [
         { title: "Standard", price: 22, features: ["Marketing strategy", "Competitive work analysis"], unavailable: ["Social media share audit", "Monthly management"] },
         { title: "Business", price: 33, features: ["Marketing strategy", "Competitive work analysis", "Social media share audit"], unavailable: ["Monthly management"] },
-        { title: "Ultimate", price: 44, features: ["Marketing strategy", "Competitive work analysis", "Social media share audit", "Monthly management"], unavailable: [] },
+        // { title: "Ultimate", price: 44, features: ["Marketing strategy", "Competitive work analysis", "Social media share audit", "Monthly management"], unavailable: [] },
     ];
 
     const faqs = [
@@ -51,7 +52,7 @@ const JobOpenings = () => {
                 />
 
                 <Container maxWidth="xl" className="relative z-[1]">
-                    <Grid className="pb-[70px]" container spacing={4} justifyContent="center" alignItems="center">
+                    <Grid className="11pb-[70px]" container spacing={4} justifyContent="center" alignItems="center">
                         {plans.map((plan, index) => (
                             <Grid
                                 item
@@ -89,68 +90,8 @@ const JobOpenings = () => {
                     </Grid>
                 </Container>
 
-                {/* FAQ Section */}
-                <Container maxWidth="lg" className="relative z-[1] pt-2">
-                    {/* Title Section */}
-                    <Typography
-                        variant="h3"
-                        className="text-center font-bold text-primary mb-10"
-                    >
-                        Have Questions? We've Got Answers!
-                    </Typography>
-
-                    <Grid container spacing={4} alignItems="center">
-                        {/* Left Side Image */}
-                        <Grid item xs={12} md={6}>
-                            <Image
-                                src="/img/career/faq.webp"
-                                alt="FAQ Illustration"
-                                className="w-full h-auto "
-                                width={500}
-                                height={0}
-                            />
-                        </Grid>
-
-                        {/* Right Side FAQ Content */}
-                        <Grid item xs={12} md={6}>
-                            <div className="text-left">
-                                <Typography
-                                    variant="h4"
-                                    className="font-bold text-gray-800 mb-6"
-                                >
-                                    Frequently Asked Questions
-                                </Typography>
-
-                                {faqs.map((faq, index) => (
-                                    <Accordion
-                                        key={index}
-                                        expanded={expanded === index}
-                                        onChange={handleChange(index)}
-                                        className="mb-2 border border-gray-300 rounded-lg shadow-none"
-                                    >
-                                        <AccordionSummary
-                                            expandIcon={
-                                                <div role="button" className="flex items-center">
-                                                    {expanded === index ? (
-                                                        <RemoveIcon className="text-primary" />
-                                                    ) : (
-                                                        <AddIcon className="text-primary" />
-                                                    )}
-                                                </div>
-                                            }
-                                        >
-                                            <Typography className="font-medium">{faq.question}</Typography>
-                                        </AccordionSummary>
-
-                                        <AccordionDetails>
-                                            <Typography>{faq.answer}</Typography>
-                                        </AccordionDetails>
-                                    </Accordion>
-                                ))}
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Container>
+             
+                <FAQSection />
             </section>
         </>
     );

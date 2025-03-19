@@ -118,7 +118,7 @@ const Header: React.FC = () => {
                 <div className="fixed top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center z-50">
                   <div
                     ref={signInRef}
-                    className="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg 11px-8 11pt-14 11pb-8 text-center bg-white"
+                    className="relative mx-auto w-full max-w-xl overflow-hidden rounded-lg 11px-8 11pt-14 11pb-8 text-center bg-white h-[90%] overflow-y-scroll"
                   >
                     <button
                       onClick={() => setIsQuoteInOpen(false)}
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
                     >
                       <Icon
                         icon="tabler:currency-xrp"
-                        className="text-white hover:text-primary text-24 inline-block me-2"
+                        className="text-black hover:text-primary text-24 inline-block me-2"
                       />
                     </button>
                     <GetAQuote />

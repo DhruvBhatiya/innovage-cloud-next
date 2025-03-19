@@ -118,7 +118,8 @@ export const ServiceData = [
                     detail: "Choose from flexible engagement models — whether you need full-time, part-time, or project-based support."
                 }
             ],
-            closingNote: "Our comprehensive support and resource augmentation services help you stay efficient and competitive — ensuring your business remains robust and future-ready."
+            // closingNote: "Our comprehensive support and resource augmentation services help you stay efficient and competitive — ensuring your business remains robust and future-ready."
+            closingNote:''
         },
         image: "/img/services/Offshore_Technical_Support.png",
         id: "off-shore-technical-support-and-resource-augmentation",
@@ -149,7 +150,8 @@ export const ServiceData = [
                     detail: "Identify patterns, detect fraud, and mitigate risks before they impact your business."
                 }
             ],
-            closingNote: "Innovage Cloud’s AI and automation solutions empower your business to operate smarter, faster, and more efficiently — driving innovation at scale."
+            // closingNote: "Innovage Cloud’s AI and automation solutions empower your business to operate smarter, faster, and more efficiently — driving innovation at scale."
+            closingNote:''
         },
         image: "/img/services/AI_Automation.png",
         id: "ai-and-automation"
@@ -185,7 +187,9 @@ export const ServiceData = [
                     detail: "Ensure uninterrupted operations with real-time OCI monitoring, automated alerts, and rapid incident resolution."
                 }
             ],
-            closingNote: "With Innovage Cloud's migration and management services, you can confidently adopt Oracle Cloud solutions that deliver agility, security, and cost-efficiency."
+            // closingNote: "With Innovage Cloud's migration and management services, you can confidently adopt Oracle Cloud solutions that deliver agility, security, and cost-efficiency."
+            closingNote:''
+
         },
         image: "/img/services/Cloud_Migrations_Management.png",
         id: "cloud-migrations-and-management"
@@ -221,7 +225,8 @@ export const ServiceData = [
                     detail: "Streamline report generation and distribution using Oracle tools, eliminating manual effort and ensuring timely insights."
                 }
             ],
-            closingNote: "With Innovage Cloud's analytics and reporting solutions, you gain the clarity and foresight needed to stay ahead in a data-driven world."
+            // closingNote: "With Innovage Cloud's analytics and reporting solutions, you gain the clarity and foresight needed to stay ahead in a data-driven world."
+            closingNote:''
         },
         image: "/img/services/Data_Analytics_Reporting.png",
         id: "data-analytics-and-reporting"

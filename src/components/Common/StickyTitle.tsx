@@ -28,6 +28,7 @@ const StickyTitle = ({ title, fixedTitle }: { title: string; fixedTitle: string 
             ref={headerRef}
             sx={{
                 "borderBottomRightRadius":"20px","borderBottomLeftRadius":"20px","marginLeft":"10px",
+                // boxShadow: '0px 1px 2px 0px #c84736',
                 position: isFixed ? "fixed" : "relative",
                 top: isFixed ? "70px" : "auto",
                 left: 0,

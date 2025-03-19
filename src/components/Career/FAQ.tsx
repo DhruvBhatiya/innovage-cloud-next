@@ -6,30 +6,30 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 
-const expertiseData = [
+const faqs = [
     {
-        title: "Oracle-Centric Expertise",
-        description: "We specialize in Oracle ERP, HCM, SCM, and Cloud Infrastructure — ensuring deep knowledge and seamless implementation."
+        question: "What are the available job roles?",
+        answer: "We offer roles in development, design, marketing, and more. Check our careers page for details."
     },
     {
-        title: "AI-Driven Innovation",
-        description: "At Innovage Cloud, AI is not the future — it's the present. Our AI services boost operational efficiency, customer experience, and data-driven decision-making."
+        question: "How can I apply for a position?",
+        answer: "You can apply directly through our careers portal by submitting your resume and cover letter."
     },
     {
-        title: "Tailored Solutions",
-        description: "Every business is unique. We design custom applications using Oracle APEX, VBCS, and JET to match your goals."
+        question: "What is the interview process like?",
+        answer: "Our interview process typically includes an initial screening, technical assessment, and final interview with team leads."
     },
     {
-        title: "Seamless Integrations",
-        description: "From Oracle Integration Cloud (OIC) to REST/SOAP APIs, we streamline your tech ecosystem for smooth data flow."
+        question: "Do you offer remote work opportunities?",
+        answer: "Yes, we have flexible remote work options depending on the role and team requirements."
     },
     {
-        title: "Scalable Talent Pool",
-        description: "Our Resource Augmentation services provide on-demand access to Oracle consultants, developers, and cloud specialists."
+        question: "What benefits do you offer employees?",
+        answer: "We offer comprehensive benefits including health insurance, paid leave, and professional development programs."
     }
 ];
 
-export const WhyChoose = () => {
+export const FAQSection = () => {
     const [expanded, setExpanded] = useState<string | false>("panel0"); // Open first accordion by default
 
     const handleChange = (panel: string) => (_: React.SyntheticEvent, isExpanded: boolean) => {
@@ -37,22 +37,41 @@ export const WhyChoose = () => {
     };
 
     return (
-        <div  style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }}>
-            <Container maxWidth="lg" className='py-[70px]' >
-                <h2 className="text-midnight_text text-4xl sm:text-5xl font-semibold pt-5 lg:pt-0 mb-10">Why Choose Innovage Cloud?</h2>
+        <div 
+        // style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }}
+        >
+            <Container maxWidth="lg" className='pt-[70px]'>
+                {/* Title Section */}
+                <Typography
+                    variant="h3"
+                    className="text-center font-bold text-primary mb-10"
+                >
+                    Have Questions? We've Got Answers!
+                </Typography>
                 <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={12} md={4}>
+
+                    {/* Left Side - Image */}
+                    <Grid item xs={12} md={5}>
                         <Image
-                            src="/img/about/whychoose.jpg"
-                            alt="Our Vision"
+                            src="/img/career/faq.png"
+                            alt="FAQ Illustration"
+                            className="w-full h-auto "
                             width={500}
-                            height={350}
-                            style={{ borderRadius: "8px" }}
+                            height={0}
                         />
                     </Grid>
-                    <Grid item xs={12} md={8}>
+
+                    {/* Right Side - FAQs */}
+                    <Grid item xs={12} md={7}>
                         <Box sx={{ maxWidth: 800, mx: "auto" }}>
-                            {expertiseData.map((item, index) => (
+
+                            <Typography
+                                variant="h4"
+                                className="font-bold text-gray-800 mb-6"
+                            >
+                                Frequently Asked Questions
+                            </Typography>
+                            {faqs.map((faq, index) => (
                                 <Accordion
                                     key={index}
                                     expanded={expanded === `panel${index}`}
@@ -77,22 +96,20 @@ export const WhyChoose = () => {
                                             backgroundColor: expanded === `panel${index}` ? "#c84736" : "#f5f5f5",
                                             color: expanded === `panel${index}` ? "#fff" : "#000",
                                             borderRadius: "8px 8px 0 0",
-                                            my: expanded === `panel${index}` ? "0px" : 0  // Add margin for active item
+                                            my: expanded === `panel${index}` ? "0px" : 0
                                         }}
                                     >
                                         <Typography variant="h6" fontWeight="bold">
-                                            {item.title}
+                                            {faq.question}
                                         </Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
-                                        <Typography>{item.description}</Typography>
+                                        <Typography>{faq.answer}</Typography>
                                     </AccordionDetails>
                                 </Accordion>
                             ))}
                         </Box>
                     </Grid>
-
-
                 </Grid>
             </Container>
         </div>

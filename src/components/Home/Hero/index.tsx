@@ -30,6 +30,8 @@ const Hero = () => {
                                 />
                                 <p className='text-success text-sm font-semibold text-center lg:text-start'>Get 30% off on first enroll</p>
                             </div> */}
+                             <span className="px-4 py-2 11mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800 w-max">Innovation | Quality | Trust  </span>
+
                             <h1 className='text-midnight_text text-4xl sm:text-4xl font-semibold pt-5 lg:pt-0'>Your Digital Transformation Partner—Innovative, <br />Scalable & Secure</h1>
                             <h3 className='text-black/70 text-lg pt-5 lg:pt-0'>Welcome to Innovage Cloud! With Innovation, Quality, and Trust at our core, we deliver smart solutions for enterprise automation, seamless integrations, and AI-driven insights—empowering businesses to stay ahead.</h3>
 

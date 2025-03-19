@@ -32,11 +32,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
 
           {/* Left Section */}
-          <div className='col-span-4 md:col-span-12 lg:col-span-4'>
+          <div className='col-span-4 md:col-span-12 lg:col-span-5'>
             <Logo />
             <div className='my-5'>
               <p>
-                At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do.
+              With Innovation, Quality, and Trust at our core, we deliver smart solutions for enterprise automation, seamless integrations, and AI-driven insights—empowering businesses to stay ahead.
               </p>
             </div>
 
@@ -48,9 +48,9 @@ const Footer = () => {
               className='flex items-center gap-4'
             >
               {[
-                { href: "https://www.linkedin.com", icon: "tabler:brand-linkedin" },
-                { href: "https://twitter.com", icon: "tabler:brand-x" },
-                { href: "https://instagram.com", icon: "tabler:brand-instagram" }
+                { href: "https://www.linkedin.com/company/innovage-cloud/posts/?feedView=all", icon: "tabler:brand-linkedin" },
+                // { href: "https://twitter.com", icon: "tabler:brand-x" },
+                { href: "https://www.instagram.com/innovage_cloud?igsh=MWE3dzlqMW4xejRqOA%3D%3D&utm_source=qr", icon: "tabler:brand-instagram" }
               ].map((item, index) => (
                 <motion.div key={index} variants={staggeredItems}>
                   <Link
@@ -66,7 +66,7 @@ const Footer = () => {
           </div>
 
           {/* Links Section */}
-          <div className="col-span-2">
+          {/* <div className="col-span-2">
             <h3 className="mb-4 text-2xl font-medium">Links</h3>
             <ul>
               {headerData.map((item, index) => (
@@ -82,10 +82,10 @@ const Footer = () => {
                 </motion.li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Services Section */}
-          <div className="col-span-2">
+          <div className="col-span-3">
             <h3 className="mb-4 text-2xl font-medium">Services</h3>
             <ul>
               {headerData.find(item => item.label === "Services")?.submenu?.map((serviceItem, index) => (
@@ -146,16 +146,16 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className='mt-10 lg:flex items-center justify-between'>
           <h4 className='text-black/50 text-sm text-center lg:text-start font-normal'>
-            @2025. All Rights Reserved by Innovage
+            @2025. All Rights Reserved by Innovage Cloud Pvt. Ltd.
           </h4>
-          <div className="flex gap-5 mt-5 lg:mt-0 justify-center lg:justify-start">
+          {/* <div className="flex gap-5 mt-5 lg:mt-0 justify-center lg:justify-start">
             <Link href="/" target="_blank" className='text-black/50 text-sm font-normal hover:text-primary'>
               Privacy policy
             </Link>
             <Link href="/" target="_blank" className='text-black/50 text-sm font-normal hover:text-primary'>
               Terms & conditions
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.footer>

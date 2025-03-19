@@ -62,8 +62,8 @@ const ScheduleMeeting = () => {
             </Box>
 
             <Box className="border-b-2 my-6">
-                <Box className="flex justify-between items-center">
-                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} >
+                <Box className="flex flex-wrap justify-between items-center">
+                    <Box display="flex" alignItems="center" gap={1} mb={'15px'} className="text-sm" >
                         <AccessTimeIcon sx={{ color: '#c84736' }} />
                         <Typography variant="body1" color="#c84736">30 Minutes</Typography>
                     </Box>
@@ -80,7 +80,7 @@ const ScheduleMeeting = () => {
                 </Box>
 
                 {step === 3 && (
-                    <Box display="flex" alignItems="center" gap={1} mb={3} px={'50px'}>
+                    <Box display="flex" className="text-left lg:text-center" gap={1} mb={3} >
                         <EventIcon sx={{ color: '#c84736' }} />
                         <Typography variant="body1" color="#c84736">
                             Confirm Meeting for {selectedDate!.format("DD-MM-YYYY")} at {selectedTime}
@@ -150,7 +150,7 @@ const ScheduleMeeting = () => {
                     <Typography variant="h6" className="text-left text-base" mb={2}>Select a Time</Typography>
                     <Grid container spacing={2}>
                         {availableTimes.map((time) => (
-                            <Grid item xs={3} key={time}>
+                            <Grid item xs={4} md={3} key={time}>
                                 <Button
                                     fullWidth
                                     onClick={() => handleTimeSelect(time)}

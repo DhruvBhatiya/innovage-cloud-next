@@ -3,6 +3,7 @@ import VisionMission from '@/components/About/VisionMission';
 import { WhyChoose } from '@/components/About/WhyChoose';
 import Breadcrumb from '@/components/Common/Breadcrumb';
 import StatsSection from '@/components/Common/StatsSection';
+import { Box } from '@mui/material';
 import Image from 'next/image';
 
 export default function About() {
@@ -23,7 +24,7 @@ export default function About() {
             <Breadcrumb pageName="About Us" />
 
             {/* Section 1 */}
-            <section className="11bg-center 11bg-cover pb-0" style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}>
+            <section className="11bg-center 11bg-cover pb-[50px]" style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}>
                 <div className="container mx-auto">
                     <div className="flex flex-wrap 11items-center justify-center">
                         <div className="w-full lg:w-1/2 text-center md:mb-12">
@@ -31,8 +32,8 @@ export default function About() {
                         </div>
                         <div className="w-full lg:w-1/2 text-center lg:text-left ">
                             <div className='mb-8'>
-                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Quality | Trust  </span>
                                 <h2 className="text-2xl font-normal mb-3 text-primary ">About Innovage Cloud</h2>
+                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Quality | Trust  </span>
                                 <p className="w-4/5 mx-auto lg:mx-0 text-justify">At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do. We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses transform, grow, and thrive in a digital-first world.</p>
                             </div>
 
@@ -48,12 +49,14 @@ export default function About() {
             </section>
 
             {/* Section 2 - Counter */}
-            <StatsSection />
 
-        
+
             <CoreValues />
+            <Box className="pt-[70px]">
+                <StatsSection />
+            </Box>
 
-
+            {/* 
             <section
                 className="pt-[70px] pb-[50px] bg-center-top"
                 style={{ backgroundImage: "url('/img/bg/vertical-line-bg.svg')" }}
@@ -69,7 +72,7 @@ export default function About() {
                                         className="lg:w-[45%] md:w-1/2 sm:mb-[30px] relative"
                                         data-anime='{"el": "childs", "translateY": [30, 0], "translateX": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad"}'
                                     >
-                                        {/* <Image src={'/img/bg/cloud-1.webp'} alt={''} width={600} height={0} className='' /> */}
+                                        
                                         <div className="11p-6 11bg-white 11shadow-md 11rounded-lg flex items-start 11absolute 11bottom-[90px]"
                                         >
 
@@ -88,7 +91,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Vission Mission  */}
 
