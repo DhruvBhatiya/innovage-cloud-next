@@ -31,7 +31,7 @@ export default function About() {
                         </div>
                         <div className="w-full lg:w-1/2 text-center lg:text-left ">
                             <div className='mb-8'>
-                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Trust | Quality </span>
+                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Quality | Trust  </span>
                                 <h2 className="text-2xl font-normal mb-3 text-primary ">About Innovage Cloud</h2>
                                 <p className="w-4/5 mx-auto lg:mx-0 text-justify">At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do. We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses transform, grow, and thrive in a digital-first world.</p>
                             </div>

@@ -27,6 +27,7 @@ const StickyTitle = ({ title, fixedTitle }: { title: string; fixedTitle: string 
         <Box
             ref={headerRef}
             sx={{
+                "borderBottomRightRadius":"20px","borderBottomLeftRadius":"20px","marginLeft":"10px",
                 position: isFixed ? "fixed" : "relative",
                 top: isFixed ? "70px" : "auto",
                 left: 0,

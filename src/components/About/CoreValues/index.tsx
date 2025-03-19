@@ -13,17 +13,18 @@ const values = [
         icon: <LightbulbIcon fontSize="inherit" />,
     },
     {
-        title: "Trust",
-        description:
-            "Partnerships are built on trust. We work closely with our clients, offering transparent processes, clear communication, and reliable support. With Innovage Cloud, you can count on consistent service, secure solutions, and a team that's invested in your success.",
-        icon: <HandshakeIcon fontSize="inherit" />,
-    },
-    {
         title: "Quality",
         description:
             "Excellence is non-negotiable. From Oracle Fusion implementations to bespoke software development, we follow industry best practices, rigorous testing, and continuous optimization — ensuring that every solution we deliver meets the highest standards.",
         icon: <VerifiedIcon fontSize="inherit" />,
     },
+    {
+        title: "Trust",
+        description:
+            "Partnerships are built on trust. We work closely with our clients, offering transparent processes, clear communication, and reliable support. With Innovage Cloud, you can count on consistent service, secure solutions, and a team that's invested in your success.",
+        icon: <HandshakeIcon fontSize="inherit" />,
+    },
+   
 ];
 
 const CoreValues = () => {

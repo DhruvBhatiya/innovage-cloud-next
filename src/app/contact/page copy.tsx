@@ -7,7 +7,6 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import ContactEmail from "@/components/ContactEmail";
-import ContactForm from "@/components/Home/ContactForm";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -19,10 +18,7 @@ const Contact = () => {
         <div>
             <Breadcrumb pageName="Contact Us" />
 
-            <section className="pb-0">
-                <ContactForm hideTitle={true} />
-            </section>
-            {/* <motion.section
+            <motion.section
                 className="relative overflow-hidden pb-0"
                 initial="hidden"
                 whileInView="visible"
@@ -60,9 +56,9 @@ const Contact = () => {
                         </div>
                     </motion.div>
                 </div>
-            </motion.section> */}
+            </motion.section>
 
-            <section className="relative pt-0">
+            <section className="relative">
                 <Container>
                     <Grid container spacing={4} justifyContent="center">
                         {[{

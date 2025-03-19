@@ -58,7 +58,7 @@ const ScheduleMeeting = () => {
                     </Typography>
                     <div></div>
                 </Box>
-                <p className="text-grey text-sm">Content will come here..</p>
+                <p className="text-grey text-sm">Unlock expert solutions for Oracle ERP, integrations, and AI! Book a session now and get tailored advice to drive your business forward.</p>
             </Box>
 
             <Box className="border-b-2 my-6">

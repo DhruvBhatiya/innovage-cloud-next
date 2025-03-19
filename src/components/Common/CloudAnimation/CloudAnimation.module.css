@@ -1,0 +1,99 @@
+@keyframes moveClouds {
+    from {
+        transform: translateX(-100%);
+        opacity: 0.7; /* Hidden at start */
+        /* opacity: 0; */
+    }
+    to {
+        transform: translateX(100vw);
+        opacity: 1; /* Gradually fades in */
+    }
+}
+
+
+
+.cloudContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.cloud {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    animation: moveClouds 40s infinite linear; /* Slower movement */
+    opacity: 0; /* Ensures clouds are invisible initially */
+}
+/* .cloud_a {
+    animation: moveClouds 40s infinite linear; 
+}
+.cloud_b {
+    animation: moveClouds 80s infinite linear; 
+} */
+
+.cloud div {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/* Cloud 1 */
+.cloud1 {
+    top: 10%;
+    animation-delay: 20s;
+}
+.cloud1 .part1 { width: 120px; height: 120px; top: -20px; left: 10px; background-color: #d9d9d9; }
+.cloud1 .part2 { width: 140px; height: 140px; top: -40px; left: 40px; background-color: #d9d9d9; }
+.cloud1 .part3 { width: 130px; height: 130px; top: -30px; left: -30px; background-color: #d9d9d9; }
+
+/* Cloud 2 */
+.cloud2 {
+    top: 30%;
+    animation-delay: 1s;
+}
+.cloud2 .part1 { width: 120px; height: 120px; top: -20px; left: 10px; background-color: #d9d9d9; }
+.cloud2 .part2 { width: 140px; height: 140px; top: -40px; left: 40px; background-color: #d9d9d9; }
+.cloud2 .part3 { width: 130px; height: 130px; top: -30px; left: -30px; background-color: #d9d9d9; }
+
+/* Cloud 3 */
+.cloud3 {
+    top: 50%;
+    animation-delay: 12s;
+}
+.cloud3 .part1 { width: 120px; height: 120px; top: -20px; left: 10px; background-color: #d9d9d9; }
+.cloud3 .part2 { width: 140px; height: 140px; top: -40px; left: 40px; background-color: #d9d9d9; }
+.cloud3 .part3 { width: 130px; height: 130px; top: -30px; left: -30px; background-color: #d9d9d9; }
+
+/* Cloud 4 */
+.cloud4 {
+    top: 70%;
+    animation-delay: 25s;
+}
+.cloud4 .part1 { width: 120px; height: 120px; top: -20px; left: 10px; background-color: #f2c0c0; }
+.cloud4 .part2 { width: 140px; height: 140px; top: -40px; left: 40px; background-color: #f2c0c0; }
+.cloud4 .part3 { width: 130px; height: 130px; top: -30px; left: -30px; background-color: #f2c0c0; }
+
+
+/* For Text  */
+.cloud {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centers the text */
+    width: 200px;
+    height: 120px;
+    /* animation: moveClouds 30s infinite linear; */
+    opacity: 0;
+}
+
+.cloudText {
+    position: absolute; /* Ensures text stays inside the cloud */
+    top: 10px;
+    left: 0;
+    z-index: 1;         /* Keeps text above cloud parts */
+    font-size: 30px;
+    font-weight: bold;
+    color: #f7f3f3;        /* Dark text for visibility */
+    opacity: 0.6;
+}
