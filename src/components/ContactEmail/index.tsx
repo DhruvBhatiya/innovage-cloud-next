@@ -14,10 +14,11 @@ interface ContactEmailProps {
     setSelectedDate?: any;
     setSelectedTime?: any;
     setStep?: any;
+    job?: any;
 }
 
 
-const ContactEmail: React.FC<ContactEmailProps> = ({ selectedDate, selectedTime, btnText, setSelectedDate, setSelectedTime, setStep }) => {
+const ContactEmail: React.FC<ContactEmailProps> = ({ selectedDate, selectedTime, btnText, setSelectedDate, setSelectedTime,  setStep, job }) => {
     const form = useRef<HTMLFormElement>(null);
     // console.log("btnText", btnText)
 
@@ -95,7 +96,7 @@ const ContactEmail: React.FC<ContactEmailProps> = ({ selectedDate, selectedTime,
             <input
                 type="hidden"
                 name="subject"
-                value={btnText ? btnText : "Contact Page"}           
+                value={btnText ? btnText + ' ' + job : "Contact Page"}           
                 placeholder={btnText ? btnText.btnText : "Contact Page"}
                 className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
                 required
