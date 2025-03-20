@@ -1,22 +1,22 @@
 "use client";
-import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import EmailIcon from "@mui/icons-material/Email";
 import {
+    Backdrop,
     Box,
-    Container,
-    Grid,
-    Typography,
+    Button,
     Card,
     CardContent,
-    Button,
-    Modal,
-    Backdrop,
-    Fade,
+    Container,
     Divider,
-    IconButton
+    Fade,
+    Grid,
+    IconButton,
+    Modal,
+    Typography
 } from "@mui/material";
-import EmailIcon from "@mui/icons-material/Email";
-import CloseIcon from "@mui/icons-material/Close";
-import ContactEmail from "../ContactEmail";
+import { useState } from "react";
+import JobContactEmail from "./JobContactEmail";
 
 const jobOpenings = [
     {
@@ -146,12 +146,14 @@ const JobOpeningsCard = () => {
                                 top: "50%",
                                 left: "50%",
                                 transform: "translate(-50%, -50%)",
-                                width: 500,
+                                width: "90%", // Increased width for better layout
+                                maxWidth: 600, // Ensures it doesn't become too wide
+                                height: "95vh", // 80% of viewport height
                                 bgcolor: "background.paper",
                                 boxShadow: 24,
                                 p: 4,
                                 borderRadius: "8px",
-
+                                overflowY: "auto" // Enables scrolling when content exceeds modal height
                             }}
                         >
                             {/* Close Icon */}
@@ -174,10 +176,12 @@ const JobOpeningsCard = () => {
                             >
                                 {selectedJob?.title}
                             </Typography>
-                            <ContactEmail btnText="Apply Now" job={selectedJob?.title} />
+
+                            <JobContactEmail btnText="Apply Now" job={`Apply for Job: ${selectedJob?.title}`} />
                         </Box>
                     </Fade>
                 </Modal>
+
             </Container>
         </Box>
 

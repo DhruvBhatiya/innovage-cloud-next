@@ -43,7 +43,7 @@ export const WhyChoose = () => {
                 <Grid container spacing={4} alignItems="center">
                     <Grid item xs={12} md={4}>
                         <Image
-                            src="/img/about/whychoose.jpg"
+                            src="/img/about/whychoose.png"
                             alt="Our Vision"
                             width={500}
                             height={350}

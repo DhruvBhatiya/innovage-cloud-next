@@ -19,18 +19,18 @@ const GetAQuote = () => {
 
         <form action="email-templates/contact-form.php" method="post">
           <div className="mb-4">
-            <label className="block text-gray-300 mb-2">Your Name</label>
-            <input type="text" name="name" placeholder="Enter your name" className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white" required />
+            <label className="block text-gray-300 mb-2">Name</label>
+            <input type="text" name="name" placeholder="Enter name" className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white" required />
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-300 mb-2">Your Email</label>
-            <input type="email" name="email" placeholder="Enter your email" className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white" required />
+            <label className="block text-gray-300 mb-2">Email</label>
+            <input type="email" name="email" placeholder="Enter email" className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white" required />
           </div>
 
           <div className="mb-4">
-            <label className="block text-gray-300 mb-2">Your Message</label>
-            <textarea name="comment" placeholder="Enter your message" rows={4} className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"></textarea>
+            <label className="block text-gray-300 mb-2">Message</label>
+            <textarea name="comment" placeholder="Enter message" rows={4} className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"></textarea>
           </div>
 
           <button type="submit" className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90">

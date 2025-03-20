@@ -84,8 +84,7 @@ const HeaderLink: React.FC<{ item: HeaderItem; sticky: any }> = ({ item, sticky 
         </Link>
       ) : (
         <Link
-          href={item.label === 'Blog' ? "https://blog.innovagecloud.com" : item.href }
-          target={item.label === 'Blog' ? "_blank" : undefined}  // 👈 Add this condition
+          href={item.href}
           prefetch={true}
           className={`text-lg flex items-center ${sticky ? 'hover:font-medium' : 'hover:text-black'} capitalize relative 
         ${sticky ? isActive

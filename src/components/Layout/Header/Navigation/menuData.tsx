@@ -123,7 +123,7 @@ export const headerData: HeaderItem[] = [
   //     { label: "Database", href: "/expertise/#database" },
   //   ],
   // },
-  // { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "/https://blog.innovagecloud.com/" },
   { label: "Contact", href: "/contact" },
 ];
 
