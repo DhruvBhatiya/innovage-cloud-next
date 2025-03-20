@@ -1,4 +1,5 @@
 "use client";
+import { Fade } from 'react-awesome-reveal';
 import CountUp from 'react-countup';
 
 const StatsSection = () => {
@@ -15,24 +16,26 @@ const StatsSection = () => {
                         { value: 5, label: "Team Hours" },
                         { value: 15, label: "AI Solutions" },
                     ].map((item, index) => (
-                        <div
-                            key={index}
-                            className={`relative ${index !== 3 ? "border-r border-gray-300" : ""} pr-4
+                        
+                            <div
+                                key={index}
+                                className={`relative ${index !== 3 ? "border-r border-gray-300" : ""} pr-4
                                 transform transition-all duration-300 ease-in-out 
                                 hover:-translate-y-2 hover:shadow-lg
                                 rounded-md p-4 
                             `}
-                        >
-                            <h2 className="text-6xl mb-2 font-medium text-primary">
-                                <CountUp 
-                                    end={item.value} 
-                                    duration={5} 
-                                    separator="," 
-                                />
-                                {index === 2 ? "k+" : "+"}
-                            </h2>
-                            <p className='text-lg'>{item.label}</p>
-                        </div>
+                            >
+                                <h2 className="text-6xl mb-2 font-medium text-primary">
+                                    <CountUp
+                                        end={item.value}
+                                        duration={5}
+                                        separator=","
+                                    />
+                                    {index === 2 ? "k+" : "+"}
+                                </h2>
+                                <p className='text-lg'>{item.label}</p>
+                            </div>
+                       
                     ))}
                 </div>
             </div>

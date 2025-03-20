@@ -5,8 +5,6 @@ import Breadcrumb from '@/components/Common/Breadcrumb';
 import StatsSection from '@/components/Common/StatsSection';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import { Fade, Slide } from "react-awesome-reveal";
-
 
 export default function About() {
 
@@ -30,65 +28,30 @@ export default function About() {
                 <div className="container mx-auto">
                     <div className="flex flex-wrap 11items-center justify-center">
                         <div className="w-full lg:w-1/2 text-center md:mb-12">
-                            {/* <Slide
-                                delay={200} // Wait before starting
-                                duration={500} // Animation duration
-                           
-                            > */}
-
-                                <Image src="/img/about/about.jpg" alt="" width={600} height={400} />
-                            {/* </Slide> */}
+                            <Image src="/img/about/about.jpg" alt="" width={600} height={400} />
                         </div>
-
-
-                        <div className="w-full lg:w-1/2 text-center lg:text-left">
+                        <div className="w-full lg:w-1/2 text-center lg:text-left ">
                             <div className='mb-8'>
-                                {/* <Slide direction="right" > */}
-                                    <h2 className="text-2xl font-normal mb-3 text-primary">About Innovage Cloud</h2>
-                                {/* </Slide> */}
-
-                                {/* <Slide direction="right" > */}
-                                    <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">
-                                        Innovation | Quality | Trust
-                                    </span>
-                                {/* </Slide> */}
-
-                                {/* <Slide direction="right" > */}
-                                    <p className="w-4/5 mx-auto lg:mx-0 text-justify">
-                                        At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do.
-                                        We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses
-                                        transform, grow, and thrive in a digital-first world.
-                                    </p>
-                                {/* </Slide> */}
+                                <h2 className="text-2xl font-normal mb-3 text-primary ">About Innovage Cloud</h2>
+                                <span className="px-4 py-2 mb-4 inline-block bg-gradient-to-r from-red-400 to-white rounded text-sm font-bold text-gray-800">Innovation | Quality | Trust  </span>
+                                <p className="w-4/5 mx-auto lg:mx-0 text-justify">At Innovage Cloud, these three words are more than just a tagline — they are the foundation of everything we do. We are not just an IT services provider; we are a strategic technology partner dedicated to helping businesses transform, grow, and thrive in a digital-first world.</p>
                             </div>
 
-                            <div>
-                                {/* <Slide direction="right" > */}
-                                    <h2 className="text-2xl font-normal mb-3 text-primary">Who We Are</h2>
-                                {/* </Slide> */}
+                            <div className="">
+                                <h2 className="text-2xl font-normal mb-3 text-primary ">Who We Are</h2>
+                                <p className="w-4/5 mx-auto lg:mx-0 text-justify">Founded with a vision to bridge the gap between technology and business success, Innovage Cloud combines cutting-edge solutions with a client-first approach. Specializing in Cloud technologies, AI-driven solutions, custom development, and seamless integrations, we empower businesses to modernize operations, harness innovation, and achieve sustainable growth.</p>
 
-                                {/* <Slide direction="right" > */}
-                                    <p className="w-4/5 mx-auto lg:mx-0 text-justify">
-                                        Founded with a vision to bridge the gap between technology and business success, Innovage Cloud combines
-                                        cutting-edge solutions with a client-first approach. Specializing in Cloud technologies, AI-driven solutions,
-                                        custom development, and seamless integrations, we empower businesses to modernize operations, harness
-                                        innovation, and achieve sustainable growth.
-                                    </p>
-                                {/* </Slide> */}
                             </div>
                         </div>
-
 
                     </div>
                 </div>
-
             </section>
 
             {/* Section 2 - Counter */}
 
 
             <CoreValues />
-
             <Box className="pt-[70px]">
                 <StatsSection />
             </Box>

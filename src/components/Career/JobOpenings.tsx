@@ -177,7 +177,7 @@ const JobOpeningsCard = () => {
                                 {selectedJob?.title}
                             </Typography>
 
-                            <JobContactEmail btnText="Apply Now" job={`Apply for Job: ${selectedJob?.title}`} />
+                            <JobContactEmail btnText="Apply Now" job={`${selectedJob?.title}`} />
                         </Box>
                     </Fade>
                 </Modal>

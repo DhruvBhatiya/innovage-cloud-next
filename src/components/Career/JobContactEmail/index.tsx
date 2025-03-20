@@ -4,185 +4,150 @@ import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
 import emailjs from 'emailjs-com';
 import Snackbar from '@mui/joy/Snackbar';
+import CircularProgress from '@mui/material/CircularProgress';
 
 interface JobContactEmailProps {
     btnText: any;
-    selectedDate?: string;
-    selectedTime?: string;
-    setSelectedDate?: any;
-    setSelectedTime?: any;
-    setStep?: any;
     job?: any;
 }
 
-const JobContactEmail: React.FC<JobContactEmailProps> = ({
-    selectedDate,
-    selectedTime,
-    btnText,
-    setSelectedDate,
-    setSelectedTime,
-    setStep,
-    job
-}) => {
+const JobContactEmail: React.FC<JobContactEmailProps> = ({ btnText, job }) => {
     const form = useRef<HTMLFormElement>(null);
-    const [open, setOpen] = React.useState(false);
+    const [loading, setLoading] = useState(false);
+    const [snackbar, setSnackbar] = useState<{ open: boolean; message: string; type: 'success' | 'error' }>({
+        open: false,
+        message: '',
+        type: 'success',
+    });
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
     };
 
-    // const handleSubmit = (e: any) => {
-    //     e.preventDefault();
-
-    //     const currentForm = form.current;
-    //     if (!currentForm) {
-    //         console.error("Form reference is null");
-    //         return;
-    //     }
-
-    //     const formData = new FormData(currentForm);
-
-    //     console.log("Form Data:", Object.fromEntries(formData.entries()));
-
-    //     emailjs
-    //         .sendForm(
-    //             process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-    //             process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-    //             currentForm,
-    //             process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-    //         )
-    //         .then((response) => {
-    //             console.log('SUCCESS!', response.status, response.text);
-    //             alert("✅ Your message has been sent successfully!");
-    //             currentForm.reset();
-    //             setSelectedDate?.(null);
-    //             setSelectedTime?.(null);
-    //             setStep?.(1);
-    //         })
-    //         .catch((error) => {
-    //             console.error('EmailJS Error:', error);
-    //             alert(`❌ Failed to send message. Error: ${error.text || "Unknown error"}`);
-    //         });
-    // };
-
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-    
+        setLoading(true);
+
         const currentForm = form.current;
-        if (!currentForm) return;
-    
-        const formData = new FormData(currentForm);
-    
+
+        console.log("currentForm", currentForm)
+        if (!currentForm) {
+            console.error("Form reference is null");
+            setLoading(false);
+            return;
+        }
+
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                body: formData,
-            });
-    
-            const data = await response.json();
-    
-            if (response.ok) {
-                alert('✅ Your message has been sent successfully!');
+            const response = await emailjs.sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_HR_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_HR_TEMPLATE_ID!,
+                currentForm,
+                process.env.NEXT_PUBLIC_EMAILJS_HR_PUBLIC_KEY!
+            );
+
+            if (response.status === 200) {
+                setSnackbar({ open: true, message: "✅ Your message has been sent successfully!", type: 'success' });
                 currentForm.reset();
+
             } else {
-                alert(`❌ Error: ${data.error}`);
+                setSnackbar({ open: true, message: "❗ Unexpected response from EmailJS. Please try again.", type: 'error' });
             }
-        } catch (error) {
-            console.error('Submission Error:', error);
-            alert('❌ An error occurred while submitting the form.');
+        } catch (error: any) {
+            console.error('EmailJS Error Details:', JSON.stringify(error, null, 2));
+            setSnackbar({ open: true, message: `❌ Failed to send message. Error: ${error.text || "Unknown error"}`, type: 'error' });
+        } finally {
+            setLoading(false);
         }
     };
-    
-    
 
     return (
-        <form ref={form} onSubmit={handleSubmit} encType="multipart/form-data">
-            <input
-                type="hidden"
-                name="date"
-                value={selectedDate || ""}
-            />
-            <input
-                type="hidden"
-                name="time"
-                value={selectedTime || ""}
-            />
-            <input
-                type="hidden"
-                name="subject"
-                value={job || "Contact Page"}
-            />
+        <>
+            <form ref={form} onSubmit={handleSubmit} encType="multipart/form-data">
 
-            {/* Name */}
-            <motion.div className="mb-4" variants={fadeInUp}>
-                <label className="block text-gray-300 mb-2">Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter name"
-                    className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
-                    required
-                />
-            </motion.div>
+                <input type="hidden" name="job" value={job || undefined} />
 
-            {/* Email */}
-            <motion.div className="mb-4" variants={fadeInUp}>
-                <label className="block text-gray-300 mb-2">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter email"
-                    className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
-                    required
-                />
-            </motion.div>
+                {/* Name */}
+                <motion.div className="mb-4" variants={fadeInUp}>
+                    <label className="block text-gray-300 mb-2">Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter name"
+                        required
+                        className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                    />
+                </motion.div>
 
-            {/* Phone */}
-            <motion.div className="mb-4" variants={fadeInUp}>
-                <label className="block text-gray-300 mb-2">Phone Number</label>
-                <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Enter phone number"
-                    className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
-                    required
-                />
-            </motion.div>
+                {/* Email */}
+                <motion.div className="mb-4" variants={fadeInUp}>
+                    <label className="block text-gray-300 mb-2">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter email"
+                        required
+                        className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                    />
+                </motion.div>
 
-            {/* Cover Letter */}
-            <motion.div className="mb-4" variants={fadeInUp}>
-                <label className="block text-gray-300 mb-2">Cover Letter</label>
-                <textarea
-                    name="coverletter"
-                    placeholder="Cover Letter"
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
-                    required
-                ></textarea>
-            </motion.div>
+                {/* Phone */}
+                <motion.div className="mb-4" variants={fadeInUp}>
+                    <label className="block text-gray-300 mb-2">Phone</label>
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Enter phone number"
+                        required
+                        className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                    />
+                </motion.div>
 
-            {/* Resume Attachment */}
-            <motion.div className="mb-4" variants={fadeInUp}>
-                <label className="block text-gray-300 mb-2">Upload Resume (PDF/DOC)</label>
-                <input
-                    type="file"
-                    name="resume"
-                    accept=".pdf, .doc, .docx"
-                    className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
-                    required
-                />
-            </motion.div>
+                {/* Cover Letter */}
+                <motion.div className="mb-4" variants={fadeInUp}>
+                    <label className="block text-gray-300 mb-2">Cover Letter</label>
+                    <textarea
+                        name="cover_letter"
+                        placeholder="Enter your cover letter"
+                        rows={4}
+                        required
+                        className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                    />
+                </motion.div>
 
-            {/* Submit Button */}
-            <motion.button
-                type="submit"
-                className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90"
-                variants={fadeInUp}
+                {/* Resume Attachment */}
+                {/* <motion.div className="mb-4" variants={fadeInUp}>
+                    <label className="block text-gray-300 mb-2">Resume (PDF only)</label>
+                    <input
+                        type="file"
+                        name="resume"
+                        accept=".pdf"
+                        required
+                        className="w-full px-4 py-2 border border-gray-500 rounded-md bg-gray-800 text-white"
+                    />
+                </motion.div> */}
+
+                {/* Submit Button */}
+                <motion.button
+                    type="submit"
+                    className="w-full bg-[#c84736] text-white py-2 rounded-md hover:opacity-90 flex justify-center items-center"
+                    variants={fadeInUp}
+                    disabled={loading}
+                >
+                    {loading ? <CircularProgress size={24} color="inherit" /> : btnText || "Send Message"}
+                </motion.button>
+            </form>
+
+            <Snackbar
+                open={snackbar.open}
+                autoHideDuration={4000}
+                onClose={() => setSnackbar({ ...snackbar, open: false })}
+                anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                color={snackbar.type === 'success' ? 'success' : 'danger'}
             >
-                {btnText || "Send Message"}
-            </motion.button>
-        </form>
+                {snackbar.message}
+            </Snackbar>
+        </>
     );
 };
 

@@ -1,27 +1,15 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
 import { motion } from "framer-motion";
-import emailjs from 'emailjs-com';
-import Snackbar from '@mui/joy/Snackbar';
+import React, { useRef } from 'react';
 
 interface JobContactEmailProps {
     btnText: any;
-    selectedDate?: string;
-    selectedTime?: string;
-    setSelectedDate?: any;
-    setSelectedTime?: any;
-    setStep?: any;
     job?: any;
 }
 
 const JobContactEmail: React.FC<JobContactEmailProps> = ({
-    selectedDate,
-    selectedTime,
     btnText,
-    setSelectedDate,
-    setSelectedTime,
-    setStep,
     job
 }) => {
     const form = useRef<HTMLFormElement>(null);
@@ -32,55 +20,43 @@ const JobContactEmail: React.FC<JobContactEmailProps> = ({
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
     };
 
-    const handleSubmit = (e: any) => {
+    
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+    
         const currentForm = form.current;
-        if (!currentForm) {
-            console.error("Form reference is null");
-            return;
-        }
-
+        if (!currentForm) return;
+    
         const formData = new FormData(currentForm);
-
-        console.log("Form Data:", Object.fromEntries(formData.entries()));
-
-        emailjs
-            .sendForm(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-                currentForm,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            )
-            .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                alert("✅ Your message has been sent successfully!");
-                currentForm.reset();
-                setSelectedDate?.(null);
-                setSelectedTime?.(null);
-                setStep?.(1);
-            })
-            .catch((error) => {
-                console.error('EmailJS Error:', error);
-                alert(`❌ Failed to send message. Error: ${error.text || "Unknown error"}`);
+    
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                body: formData,
             });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                alert('✅ Your message has been sent successfully!');
+                currentForm.reset();
+            } else {
+                alert(`❌ Error: ${data.error}`);
+            }
+        } catch (error) {
+            console.error('Submission Error:', error);
+            alert('❌ An error occurred while submitting the form.');
+        }
     };
+    
+    
 
     return (
         <form ref={form} onSubmit={handleSubmit} encType="multipart/form-data">
+            
             <input
                 type="hidden"
-                name="date"
-                value={selectedDate || ""}
-            />
-            <input
-                type="hidden"
-                name="time"
-                value={selectedTime || ""}
-            />
-            <input
-                type="hidden"
-                name="subject"
+                name="job"
                 value={job || "Contact Page"}
             />
 
