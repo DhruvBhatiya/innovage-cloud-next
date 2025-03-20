@@ -38,7 +38,7 @@ export const FAQSection = () => {
 
     return (
         <div 
-        // style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }}
+        style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }}
         >
             <Container maxWidth="lg" className='py-[70px]'>
                 {/* Title Section */}

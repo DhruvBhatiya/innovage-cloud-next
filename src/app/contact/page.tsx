@@ -19,7 +19,7 @@ const Contact = () => {
         <div>
             <Breadcrumb pageName="Contact Us" />
 
-            <section className="pb-0">
+            <section className="bg-white pb-0">
                 <ContactForm hideTitle={true} />
             </section>
             {/* <motion.section
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
             </motion.section> */}
 
-            <section className="relative pt-0">
+            <section className="relative " style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }}>
                 <Container>
                     <Grid container spacing={4} justifyContent="center">
                         {[{

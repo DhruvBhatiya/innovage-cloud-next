@@ -9,6 +9,7 @@ import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
 import ContactForm from "@/components/Home/ContactForm";
 import StatsSection from "@/components/Common/StatsSection";
+import { Box } from "@mui/material";
 export const metadata: Metadata = {
   title: "Innovage Cloud",
 };
@@ -28,7 +29,9 @@ export default function Home() {
       {/* <Testimonial /> */}
       {/* <Counter  /> */}
       {/* <Newsletter /> */}
-      <ContactForm />
+      <Box style={{ backgroundImage: "url('/img/bg/cloud-bottom-white-bg.webp')", backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom' }} >
+        <ContactForm />
+      </Box>
     </main>
   );
 }
